@@ -1,0 +1,112 @@
+﻿@model HsrsIndia.Models.Trainingmaster
+
+@{
+    ViewBag.Title = "Training Master";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+    if (TempData["message"] != null)
+    {
+        <script>
+            alert('@TempData["message"]');
+        </script>
+    }
+}
+
+
+@using (Html.BeginForm("Index", "Trainingmaster"))
+{
+    <div class="row setup-content" id="step-1">
+        <div class="col-md-12 col-sm-12">
+            <div class="well">
+                <div class="row">
+                    <div class="Shipping_address">
+                        <h1>Training Master</h1>
+                        <div class="col-md-6 col-sm-6" style="left:25%">
+                            <dl class="dl-horizontal">
+                                <dt>Trainig Name<span>*</span></dt>
+                                <dd> @Html.EditorFor(model => model.Name, new { id = "name" })
+                                    @Html.HiddenFor(model => model.T_Id)
+                                </dd>
+                            </dl>
+
+                            <p>
+                                <input id="sub" type="submit" class="Proceed_pay first" value="@ViewBag.SubmitValue" name="submit" style="background: #1E3151;" />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="Course_table" id="tableview">
+        <div class="Table_main">
+            <div class="container">
+
+                <div class="table_page">
+                    <div class="table-responsive">
+                        <table id="hsrs_table" class="display" cellspacing="0" width="100%">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Training Name
+                                    </th>
+
+                                    <th>
+                                        Edit/Delete
+                                    </th>
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody id="tcourse">
+                                @if (ViewData["AllcouData"] != null)
+                                {
+
+                                    foreach (System.Data.DataRow dr in (ViewData["AllcouData"] as System.Data.DataTable).Rows)
+                                    {
+                                        <tr>
+                                            <td>@dr["Name"]</td>
+                                            <td>
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Pathin"]/edittraining/@dr["Id"]" class="bok_online">Edit</a>
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Pathin"]/deletetraining/@dr["Id"]" class="enquire" onclick="return confirm('Are you sure do you want to delete the selected entry?')">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <input type="hidden" name="txt" id="name" value="@TempData["Name"]" />
+    <input type="hidden" name="txt" id="id" value="@TempData["ID"]" />
+}
+<script>
+    $(document).ready(function () {
+
+        var name = $("#name").val()
+        var id = $("#id").val()
+        if (name != "") { $("#Name").val(name) }
+        if (id != "") { $("#T_Id").val(id) }
+    });
+</script>
+<script>
+    $(document).ready(function () {
+
+        $("#sub").click(function () {
+            var name = $("#Name").val();
+            if (name == "") {
+                alert("Please Enter Training Name");
+                $("#Name").focus();
+                return false;
+            }
+        });
+    });
+</script>

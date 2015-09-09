@@ -1,0 +1,511 @@
+﻿@{
+    ViewBag.MetaDescription = "HSRS Global provides you the facility to book or to register prince2 course through online, Select your course that you are looking for and book prince2.";
+    ViewBag.MetaKeywords = "project management training, prince2 exam cost, prince2 online, prince2 register, prince2 online course, prince2 online training, prince2 foundation online, prince2 training online, prince2 exam online, prince2 certification register";
+    ViewBag.Title = "prince2 register Sydney Australia | Prince2 Online Course Melbourne";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="bread_main">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]">Home</a></li>
+            <li class="active">Book Online</li>
+        </ol>
+    </div>
+</div>
+
+
+@using (Html.BeginForm("Index", "bookonline"))
+{
+<section class="Detail_main">
+    <div class="container" align="center">
+
+        <div class="payment_detail" align="center">
+            <div class="row form-group">
+                <div class="col-xs-12">
+                    <div class="top_payment" align="center">
+                        <div class="top_inner_prod">
+                            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                                <li class="active">
+                                    <a href="#step-1">
+                                        <p class="list-group-item-text">Your Details</p>
+                                    </a>
+                                </li>
+                                @*<li class="disabled">
+                                    <a href="#step-2">
+                                        <p class="list-group-item-text">Payment Option</p>
+                                    </a>
+                                </li>*@
+                                <li class="disabled" style="padding-left: 10px; padding-right: 18px;">
+                                    <a href="#step-3">
+                                        <p class="list-group-item-text" style=" margin-left: -15px;">Summary & Payment</p>
+                                    </a>
+                                </li>
+                                <li class="disabled">
+                                    <a href="#step-4">
+                                        <p class="list-group-item-text" style=" margin-left: -15px;">Confirmation</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content" id="step-1">
+                <div class="col-md-12 col-sm-12">
+                    <div class="well">
+                        <div class="row">
+
+                            <div class="col-md-12 col-sm-12">
+                                <input type="hidden" name="ctype" value="@ViewBag.Type" />
+                                <input type="hidden" name="cname" value="@ViewBag.CName" />
+                                <div class="detail_course">
+                                    @if (ViewBag.Type =="Course")
+                                    { 
+                                    <h1>Course</h1>
+                                    <p>Name : <span>@ViewBag.CName</span></p>
+                                    <p>Location : <span>@ViewBag.Location</span></p>
+                                    <p>Chosen Date : <span>@ViewBag.Date</span></p>
+                                    }
+                                    else if (ViewBag.Type == "online")
+                                    {
+                                        <h1>Course</h1>
+                                        <p>Name : <span>@ViewBag.CName</span></p>
+                                    }
+                                    else
+                                    {
+                                        <h1>Book</h1>
+                                        <p>Name : <span>@ViewBag.CName</span></p>
+                                    }
+                                </div>
+
+                                <div class="Shipping_address">
+                                    <h1>Your Details</h1>
+                                    <!--Error
+        <div class="alert alert-success"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent. (If form ok!)</strong></div>
+
+            <div class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs. (If form error!)</strong></div>
+
+             <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div>-->
+
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <dl class="dl-horizontal">
+                                            <dt>TITLE<span>*</span></dt>
+                                            <dd>
+                                                <select class="ship_select" id="title" name="title">
+                                                    <option value="0">Select</option>
+                                                    <option value="Mr">Mr</option>
+                                                    <option value="Mrs">Mrs</option>
+                                                    <option value="Miss">Miss</option>
+                                                    <option value="Ms">Ms</option>
+                                                </select>
+                                            </dd>
+                                            <dt>First Name<span>*</span></dt>
+                                            <dd> <input type="text" id="firstname" required name="firstname"></dd>
+                                            <dt>Last Name<span>*</span></dt>
+                                            <dd><input type="text" id="lastname" required name="lastname"></dd>
+
+                                            <dt>Company Name</dt>
+                                            <dd>
+                                                <input type="text" id="cmpname"  name="cmpname">
+                                            </dd>
+                                            <!-- <dt>Job Title</dt>
+                <dd><input type="text">
+                </dd> -->
+                                            <dt>Address Line 1<span>*</span></dt>
+                                            <dd>
+                                                <input type="text" id="address1" required name="address1">
+                                            </dd>
+                                            <dt>Address Line 2</dt>
+                                            <dd><input type="text" id="address2" name="address2"></dd>
+                                            <dt>Comments</dt>
+                                            <dd>
+
+                                                <textarea name="InputMessage" id="InputMessage" class="form-control enqur" rows="3" style=" width:328px" placeholder="Other comments or questions(e.g. do you have any dietary requirements,need special access,or reading problems)"></textarea>
+
+
+                                            </dd>
+                                        </dl>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6">
+                                        <dl class="dl-horizontal">
+                                            <dt>City / Town<span>*</span></dt>
+                                            <dd> <input type="text" id="city" required name="city"></dd>
+                                            <dt>Postcode<span>*</span></dt>
+                                            <dd><input type="text" id="postcode" required name="postcode"></dd>
+                                            <dt>Country<span>*</span></dt>
+                                            <dd>
+                                                <select class="ship_select" id="country" name="country">
+                                                    <option value="0">Select</option>
+                                                    <option value="Australia">Australia</option>
+                                                    <option value="India">India</option>
+                                                    <option value="New Zealand">New Zealand</option>
+                                                </select>
+                                            </dd>
+                                            <dt>Telephone No</dt>
+                                            <dd><input type="tel" id="tele" name="tele" pattern="[0-9]{10,10}" maxlength="10"></dd>
+                                            <dt>Mobile No<span>*</span></dt>
+                                            <dd><input type="tel" id="mobile" name="mobile" pattern="[0-9]{10,10}" maxlength="10" required></dd>
+                                            <dt>Email<span>*</span> </dt>
+                                            <dd><input type="email" id="email" required name="email"></dd>
+                                            <!-- <dt>Retype email</dt>
+                <dd><input type="text"></dd> -->
+                                        </dl>
+                                       
+                                        <button id="activate-step-2" class="Proceed_pay first">Next</button>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="clear"></div>
+
+
+
+            </div>
+
+            <!-- step 2 -->
+
+            
+
+
+            <!-- step 2 -->
+            <!-- step 3 -->
+
+            <div class="row setup-content" id="step-3">
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="detail_course">
+                        @if (ViewBag.Type == "Course")
+                        {
+                            <h1>Course</h1>
+                            <p>Name : <span>@ViewBag.CName</span></p>
+                            <p>Location : <span>@ViewBag.Location</span></p>
+                            <p>Chosen Date : <span>@ViewBag.Date</span></p>
+                        }
+                        else if (ViewBag.Type == "online")
+                        {
+                            <h1>Course</h1>
+                            <p>Name : <span>@ViewBag.CName</span></p>
+                        }
+                        else
+                        {
+                            <h1>Book</h1>
+                            <p>Name : <span>@ViewBag.CName</span></p>
+                        }
+                    </div>
+
+
+
+                    <div class="detail_course step3" id="yourdet">
+                        
+
+                    </div>
+
+
+                    <div class="detail_course step3">
+                        <h1>Total Fees</h1>
+                        <p>Price : <span>$@ViewBag.Fee</span> </p>
+                        <p>GST (&#64; 10%) : <span>$@ViewBag.gst</span> </p>
+                        <p>Total fees : <span>$@ViewBag.total</span> </p>
+                        <input type="hidden" name="totalfee" value="@ViewBag.total" />
+                        <br />@*<br />
+                        <span style="text-transform:none">
+                            Note:We will process the booking and send you an email with an invoice. The email and invoice will contain payment details. Payments may be made by electronic funds transfer or cheque.
+                            All payments must use the invoice number as a payment reference.
+                        </span>*@
+                    </div>
+                    <p class="term_cond"><input type="checkbox" id="chk">I have read and agree to the <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/Home/Terms" target="_blank">Terms & Conditions</a></p>
+
+                    @*<a href="#step-2" class="Proceed_previous">Previous</a>*@
+
+                    @*<button id="activate-step-4" class="Proceed_pay">Next</button>*@
+                    <input type="submit" name="submit" id="activate-step-4" value="SUBMIT" class="Proceed_pay">
+
+                </div>
+            </div>
+
+            <!-- step 3 -->
+            <!-- step -4 -->
+
+            <div class="row setup-content" id="step-4">
+
+                <div class="Payment_sucess">
+
+                    <div class="alert alert-success" role="alert">Your Order has been processed successfully</div>
+
+
+
+                </div>
+
+
+            </div>
+
+            <!-- step -4 -->
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+</section>  
+}
+<script>
+$( document ).click(function() {
+$( "#toggle li" ).toggle( "slide" );
+});
+$(document).ready(function () {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+});
+
+
+$(function () {
+
+    var $table = $('table').tablesorter({
+        theme: 'blue',
+        widgets: ["zebra", "filter"],
+        widgetOptions: {
+            // filter_anyMatch replaced! Instead use the filter_external option
+            // Set to use a jQuery selector (or jQuery object) pointing to the
+            // external filter (column specific or any match)
+            filter_external: '.search',
+            // add a default type search to the first name column
+            filter_defaultFilter: { 1: '~{query}' },
+            // include column filters
+            filter_columnFilters: true,
+            filter_placeholder: { search: 'Search...' },
+            filter_saveFilters: true,
+            filter_reset: '.reset'
+        }
+    });
+
+});
+
+
+//Step 1, Step2
+
+
+$(document).ready(function () {
+
+    var navListItems = $('ul.setup-panel li a'),
+        allWells = $('.setup-content');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+            $item = $(this).closest('li');
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.closest('li').removeClass('active');
+            $item.addClass('active');
+            allWells.hide();
+            $target.show();
+        }
+    });
+
+    $('ul.setup-panel li.active a').trigger('click');
+    function ValidateEmail(email) {
+        var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return expr.test(email);
+    };
+    // DEMO ONLY //
+    $('#activate-step-2').on('click', function (e) {
+        var Title = $("#title option:selected").text();
+        var firstname = $("#firstname").val();
+        var lastname = $("#lastname").val();
+        var cmpname = $("#cmpname").val();
+        var address1 = $("#address1").val();
+        var address2 = $("#address2").val();
+        var city = $("#city").val();
+        var postcode = $("#postcode").val();
+        var country = $("#country option:selected").text();
+        var tele = $("#tele").val();
+        var mobile = $("#mobile").val();
+        var email = $("#email").val();
+        if (Title == "Select") {
+            alert("Please Select Your Title");
+            $("#title").focus();
+            return false;
+        }
+        else if (firstname == "" || firstname == null) {
+            alert("Please Enter Your First name");
+            $("#firstname").focus();
+            return false;
+        }
+        else if (lastname == "" || lastname == null) {
+            alert("Please Enter Your Last name");
+            $("#lastname").focus();
+            return false;
+        }
+        //else if (cmpname == "" || cmpname == null) {
+        //    alert("Please Enter Your Company name");
+        //    $("#cmpname").focus();
+        //    return false;
+        //}
+        else if (address1 == "" || address1 == null) {
+            alert("Please Enter Your Address");
+            $("#address1").focus();
+            return false;
+        }
+        else if (city == "" || city == null) {
+            alert("Please Enter Your City");
+            $("#city").focus();
+            return false;
+        }
+        else if (postcode == "" || postcode == null) {
+            alert("Please Enter Your Postal code");
+            $("#postcode").focus();
+            return false;
+        }
+        else if (country == "Select") {
+            alert("Please Select Your Country");
+            $("#country").focus();
+            return false;
+        }
+        //else if (tele == "" || tele == null) {
+        //    alert("Please Enter Your Telephone number");
+        //    $("#tele").focus();
+        //    return false;
+        //}
+        else if (mobile == "" || mobile == null) {
+            alert("Please Enter Your Mobile number");
+            $("#mobile").focus();
+            return false;
+        }
+        else if (email == "" || email == null) {
+            alert("Please Enter Your Email address ");
+            $("#email").focus();
+            return false;
+        }
+        else if (email != "" || email != null)
+        {
+            if (!ValidateEmail(email)) {
+                alert("Invalid email address.");
+                $("#email").focus();
+                return false;
+            }
+        }
+
+        $('ul.setup-panel li:eq(1)').removeClass('disabled');
+        $('ul.setup-panel li a[href="#step-3"]').trigger('click');
+        $(this).remove();
+    })
+
+    //$('#activate-step-3').on('click', function (e) {
+    //    $('ul.setup-panel li:eq(2)').removeClass('disabled');
+    //    $('ul.setup-panel li a[href="#step-3"]').trigger('click');
+    //    $(this).remove();
+    //})
+
+    $('#activate-step-4').on('click', function (e) {
+        var isChecked = $('#chk').is(':checked');
+        if(!isChecked)
+            {
+            alert('Please select Terms and Conditions ');
+            return false;
+        }
+    });
+});
+
+</script>
+   @if (TempData["message"] != null)
+    {
+<script>
+    $(document).ready(function () {
+    $('ul.setup-panel li:eq(1)').removeClass('disabled');
+    //$('ul.setup-panel li:eq(2)').removeClass('disabled');
+    $('ul.setup-panel li:eq(3)').removeClass('disabled');
+    $('ul.setup-panel li a[href="#step-4"]').trigger('click');
+    $(this).remove();
+    });
+</script>
+    }
+<script>
+    $("#activate-step-2").click(function () {
+        var Title = $("#title option:selected").text();
+        var firstname = $("#firstname").val();
+        var lastname = $("#lastname").val();
+        var cmpname = $("#cmpname").val();
+        var address1 = $("#address1").val();
+        var address2 = $("#address2").val();
+        var city = $("#city").val();
+        var postcode = $("#postcode").val();
+        var country = $("#country option:selected").text();
+        var tele = $("#tele").val();
+        var mobile = $("#mobile").val();
+        var email = $("#email").val();
+
+        $("#yourdet").html("<h1>Your Details</h1><p>Name : <span>" + Title + " " + firstname + " " + lastname+ "</span></p><p>Address : <span>" + address1 + ","+ "</span> </p><p>" + address2 + "," + city + "," + postcode + "," + country + "</p><br /><p>Telephone : <span>" + tele + " </span> </p><p>Mobile : <span>" + mobile + " </span> </p><p>Email : <span>" + email + "</span></p>");
+    });
+
+    $("#tele").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+    $("#mobile").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+    $("#postcode").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+</script>

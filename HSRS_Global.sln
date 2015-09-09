@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSRS_Global", "HSRS_Global\HSRS_Global.csproj", "{20B14BE0-B429-4489-B71B-C8C59B2149CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSRS_Global.Tests", "HSRS_Global.Tests\HSRS_Global.Tests.csproj", "{1C503C8C-DDF5-4611-91F5-0EC7519F5557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HsrsIndia", "HsrsIndia\HsrsIndia.csproj", "{2AAA25BC-2CBF-4B03-8996-DD0E5C41AB1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HsrsIndia.Tests", "HsrsIndia.Tests\HsrsIndia.Tests.csproj", "{B2450DA7-0E25-4E02-A735-1D8057CF8E70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20B14BE0-B429-4489-B71B-C8C59B2149CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B14BE0-B429-4489-B71B-C8C59B2149CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B14BE0-B429-4489-B71B-C8C59B2149CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B14BE0-B429-4489-B71B-C8C59B2149CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C503C8C-DDF5-4611-91F5-0EC7519F5557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C503C8C-DDF5-4611-91F5-0EC7519F5557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C503C8C-DDF5-4611-91F5-0EC7519F5557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C503C8C-DDF5-4611-91F5-0EC7519F5557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AAA25BC-2CBF-4B03-8996-DD0E5C41AB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AAA25BC-2CBF-4B03-8996-DD0E5C41AB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AAA25BC-2CBF-4B03-8996-DD0E5C41AB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AAA25BC-2CBF-4B03-8996-DD0E5C41AB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2450DA7-0E25-4E02-A735-1D8057CF8E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2450DA7-0E25-4E02-A735-1D8057CF8E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2450DA7-0E25-4E02-A735-1D8057CF8E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2450DA7-0E25-4E02-A735-1D8057CF8E70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,304 @@
+﻿@model HSRS_Global.Models.Coursemaster
+
+@{
+    ViewBag.Title = "Course Master";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+    if (TempData["message"] != null)
+    {
+        <script>
+            alert('@TempData["message"]');
+        </script>
+    }
+}
+<link href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/css/jqueryuitheme.css" rel="stylesheet" />
+<script src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/js/jqueryuidate.js"></script>
+@using (Html.BeginForm("Index", "Coursemaster"))
+{
+
+    @*<fieldset>
+            <legend>Coursemaster</legend>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Trainingid)
+                @Html.HiddenFor(model => model.C_Id)
+            </div>
+            <div class="editor-field">
+               @Html.DropDownListFor(model => model.Trainingid, new SelectList(ViewBag.Type, "Value", "Text"), new { id = "drop", autocomplete = "off", name = "drop" })
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Name, new { id = "name"})
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Date)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Date,new { id = "Date"})
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Location)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Location, new { id = "loaction" })
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Duration)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Duration, new { id = "duration" })
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Price)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Price, new { id = "price" })
+            </div>
+
+
+        </fieldset>*@
+    <script>
+    $(function () {
+        $("#Date").datepicker();
+        $("#Date").datepicker("option", "dateFormat", "dd-mm-yy");
+    });
+    </script>
+    <div class="row setup-content" id="step-1">
+        <div class="col-md-12 col-sm-12">
+            <div class="well">
+                <div class="row">
+                    <div class="Shipping_address">
+                        <h1>Course Master</h1>
+                        <div class="col-md-6 col-sm-6" style="left:25%">
+                            <dl class="dl-horizontal">
+                                <dt>Training Name<span>*</span></dt>
+                                <dd>
+                                    @Html.DropDownListFor(model => model.Trainingid, new SelectList(ViewBag.Type, "Value", "Text"), new { id = "drop", autocomplete = "off", name = "drop" })
+                                    @Html.HiddenFor(model => model.C_Id)
+                                </dd>
+                                <dt>Course Name<span>*</span></dt>
+                                <dd> @Html.EditorFor(model => model.Name, new { id = "name" })</dd>
+                                <dt>Date<span>*</span></dt>
+                                <dd>@Html.EditorFor(model => model.Date, new { id = "Date" })</dd>
+
+                                <dt>Location<span>*</span></dt>
+                                <dd>
+                                    @Html.EditorFor(model => model.Location, new { id = "loaction" })
+                                </dd>
+                                <dt>Duration<span>*</span></dt>
+                                <dd>
+                                    @Html.EditorFor(model => model.Duration, new { id = "duration" }) <span>  Days</span>
+                                </dd>
+                                <dt>Price<span>*</span></dt>
+                                <dd>@Html.EditorFor(model => model.Price, new { id = "price" }) <span>  $</span></dd>
+                            </dl>
+
+                            <p>
+                                <input id="sub" type="submit" class="Proceed_pay first" value="@ViewBag.SubmitValue" name="submit" style="background: #1E3151;"/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+                    <section class="Course_table" id="tableview">
+                        <div class="Table_main">
+                            <div class="container">
+
+                                <div class="table_page">
+                                    <div class="table-responsive">
+                                        <table id="hsrs_table" class="display" cellspacing="0" width="100%">
+
+                                            <thead>
+
+                                                <tr>
+
+                                                    <th>
+                                                        COURSE
+                                                    </th>
+                                                    <th id="browserFilter">
+                                                        Date
+                                                    </th>
+
+                                                    <th id="platformsFilter">
+                                                        LOCATION
+                                                    </th>
+
+                                                    <th>
+                                                        DURATION
+                                                    </th>
+
+                                                    <th>
+                                                        PRICE
+                                                    </th>
+
+                                                    <th>
+                                                        Edit/Delete
+                                                    </th>
+
+
+                                                </tr>
+                                            </thead>
+
+                                            <tfoot>
+                                                <tr>
+
+                                                    <th>
+                                                        COURSE
+                                                    </th>
+                                                    <th class="locat">
+                                                        LOCATION
+                                                    </th>
+                                                    <th class="date">
+                                                        Date
+                                                    </th>
+                                                </tr>
+                                            </tfoot>
+
+                                            <tbody id="tcourse">
+                                                @if (ViewData["AllcouData"] != null)
+                            {
+
+                                foreach (System.Data.DataRow dr in (ViewData["AllcouData"] as System.Data.DataTable).Rows)
+                                {
+                            <tr>
+                                <td>@dr["Name"]</td>
+                                <td>@dr["Date"]</td>
+                                <td>
+                                    @dr["Location"]
+                                </td>
+                                <td>
+                                    @dr["Duration"] Days
+                                </td>
+                                <td>
+                                    $@dr["Price"]
+                                </td>
+                                <td>
+                                    <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/editcourse/@dr["ID"]" class="bok_online">Edit</a>
+                                    <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/deletecourse/@dr["ID"]" class="enquire" onclick="return confirm('Are you sure do you want to delete the selected entry?')">Delete</a>
+                                </td>
+                            </tr>
+                                }
+                            }
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
+                    <input type="hidden" name="txt" id="name" value="@TempData["Name"]" />
+                    <input type="hidden" name="txt" id="location" value="@TempData["Location"]" />
+                    <input type="hidden" name="txt" id="duration" value="@TempData["Duration"]" />
+                    <input type="hidden" name="txt" id="price" value="@TempData["Price"]" />
+                    <input type="hidden" name="txt" id="date" value="@TempData["Date"]" />
+                    <input type="hidden" name="txt" id="Tname" value="@TempData["Training"]" />
+                    <input type="hidden" name="txt" id="id" value="@TempData["ID"]" />
+                    }
+                    <script>
+                        $(document).ready(function () {
+
+                            var name = $("#name").val()
+                            var loc = $("#location").val()
+                            var dur = $("#duration").val()
+                            var pri = $("#price").val()
+                            var date = $("#date").val()
+                            var tname = $("#Tname").val()
+                            var id = $("#id").val()
+                            if (name != "") { $("#Name").val(name) }
+
+                            if (loc != "") { $("#Location").val(loc) }
+                            if (dur != "") { $("#Duration").val(dur) }
+                            if (pri != "") { $("#Price").val(pri) }
+                            if (date != "") { $("#Date").val(date) }
+                            if (tname != "") { $("drop").val("Hi"); }
+                            if (id != "") { $("#C_Id").val(id) }
+                        });
+                    </script>
+<script>
+    $(document).ready(function () {
+
+        $("#sub").click(function () {
+            var name = $("#Name").val();
+            var loc = $("#Location").val();
+            var dur = $("#Duration").val();
+            var pri = $("#Price").val();
+            var dat = $("#Date").val();
+            var droptext = $("#drop option:selected").text();
+            if (droptext == 'Select')
+            {
+                alert("Please Select Training Type");
+                $("#drop").focus();
+                return false;
+            }
+            else if (name == "")
+            {
+                alert("Please Enter Course Name");
+                $("#Name").focus();
+                return false;
+            }
+            else if (dat == "") {
+                alert("Please Enter Date");
+                $("#Date").focus();
+                return false;
+            }
+            else if (loc == "") {
+                alert("Please Enter Location");
+                $("#Location").focus();
+                return false;
+            }
+            else if (dur == "") {
+                alert("Please Enter Duration");
+                $("#Duration").focus();
+                return false;
+            }
+            else if (pri == "") {
+                alert("Please Enter Price");
+                $("#Price").focus();
+                return false;
+            }
+
+
+        });
+        $("#Duration").keydown(function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                // Allow: Ctrl+A
+                (e.keyCode == 65 && e.ctrlKey === true) ||
+                // Allow: home, end, left, right, down, up
+                (e.keyCode >= 35 && e.keyCode <= 40)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57 || e.keyCode == 46)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+        $("#Price").keydown(function (e) {
+            // Allow: backspace, delete, tab, escape, enter and .
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                // Allow: Ctrl+A
+                (e.keyCode == 65 && e.ctrlKey === true) ||
+                // Allow: home, end, left, right, down, up
+                (e.keyCode >= 35 && e.keyCode <= 40)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57 || e.keyCode == 46)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>
+

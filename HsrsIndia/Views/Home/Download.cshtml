@@ -1,0 +1,637 @@
+﻿
+@{
+    ViewBag.Title = "Download";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (TempData["message"] != null)
+    {
+        <script>
+            function SaveToDisk(fileURL, fileName,browsername) {
+                // for non-IE
+                if (browsername == "Chrome") {
+                    if (!window.ActiveXObject) {
+                        var save = document.createElement('a');
+                        save.href = fileURL;
+                        save.target = '_blank';
+                        save.download = fileName || 'unknown';
+
+                        var event = document.createEvent('Event');
+                        event.initEvent('click', true, true);
+                        save.dispatchEvent(event);
+                        (window.URL || window.webkitURL).revokeObjectURL(save.href);
+                    }
+
+                        // for IE
+                    else if (!!window.ActiveXObject && document.execCommand) {
+                        var _window = window.open(fileURL, '_blank');
+                        _window.document.close();
+                        _window.document.execCommand('SaveAs', true, fileName || fileURL)
+                        _window.close();
+                    }
+                }
+                else {
+                    window.open(fileURL);
+                }
+            }
+        </script>
+        <script>
+            alert('@(TempData["message"])')
+            var nVer = navigator.appVersion;
+            var nAgt = navigator.userAgent;
+            var browserName = navigator.appName;
+            var fullVersion = '' + parseFloat(navigator.appVersion);
+            var majorVersion = parseInt(navigator.appVersion, 10);
+            var nameOffset, verOffset, ix;
+
+            // In Opera 15+, the true version is after "OPR/" 
+            if ((verOffset = nAgt.indexOf("OPR/")) != -1) {
+                browserName = "Opera";
+                fullVersion = nAgt.substring(verOffset + 4);
+            }
+                // In older Opera, the true version is after "Opera" or after "Version"
+            else if ((verOffset = nAgt.indexOf("Opera")) != -1) {
+                browserName = "Opera";
+                fullVersion = nAgt.substring(verOffset + 6);
+                if ((verOffset = nAgt.indexOf("Version")) != -1)
+                    fullVersion = nAgt.substring(verOffset + 8);
+            }
+                // In MSIE, the true version is after "MSIE" in userAgent
+            else if ((verOffset = nAgt.indexOf("MSIE")) != -1) {
+                browserName = "Microsoft Internet Explorer";
+                fullVersion = nAgt.substring(verOffset + 5);
+            }
+                // In Chrome, the true version is after "Chrome" 
+            else if ((verOffset = nAgt.indexOf("Chrome")) != -1) {
+                browserName = "Chrome";
+                fullVersion = nAgt.substring(verOffset + 7);
+            }
+                // In Safari, the true version is after "Safari" or after "Version" 
+            else if ((verOffset = nAgt.indexOf("Safari")) != -1) {
+                browserName = "Safari";
+                fullVersion = nAgt.substring(verOffset + 7);
+                if ((verOffset = nAgt.indexOf("Version")) != -1)
+                    fullVersion = nAgt.substring(verOffset + 8);
+            }
+                // In Firefox, the true version is after "Firefox" 
+            else if ((verOffset = nAgt.indexOf("Firefox")) != -1) {
+                browserName = "Firefox";
+                fullVersion = nAgt.substring(verOffset + 8);
+            }
+                // In most other browsers, "name/version" is at the end of userAgent 
+            else if ((nameOffset = nAgt.lastIndexOf(' ') + 1) <
+                      (verOffset = nAgt.lastIndexOf('/'))) {
+                browserName = nAgt.substring(nameOffset, verOffset);
+                fullVersion = nAgt.substring(verOffset + 1);
+                if (browserName.toLowerCase() == browserName.toUpperCase()) {
+                    browserName = navigator.appName;
+                }
+            }
+            // trim the fullVersion string at semicolon/space if present
+            if ((ix = fullVersion.indexOf(";")) != -1)
+                fullVersion = fullVersion.substring(0, ix);
+            if ((ix = fullVersion.indexOf(" ")) != -1)
+                fullVersion = fullVersion.substring(0, ix);
+
+            majorVersion = parseInt('' + fullVersion, 10);
+            if (isNaN(majorVersion)) {
+                fullVersion = '' + parseFloat(navigator.appVersion);
+                majorVersion = parseInt(navigator.appVersion, 10);
+            }
+            SaveToDisk('@(TempData["file"])','@TempData["filename"]',browserName)
+   // window.open('@(TempData["file"])')
+        </script>
+    }
+}
+<script src="js/popup.js" type="text/javascript"></script>
+
+<style type="text/css">
+       /* [Object] Modal
+    * =============================== */
+       .modal___bg {
+           opacity: 0;
+           visibility: hidden;
+           position: fixed;
+           top: 0;
+           right: 0;
+           bottom: 0;
+           left: 0;
+           text-align: left;
+           background-image: url("images/popup.png");
+           transition: opacity .25s ease;
+       }
+
+       .modal__bg {
+           position: absolute;
+           top: 0;
+           right: 0;
+           bottom: 0;
+           left: 0;
+           cursor: pointer;
+       }
+
+       .modal-state {
+           display: none;
+       }
+
+           .modal-state:checked + .modal___bg {
+               opacity: 1;
+               visibility: visible;
+           }
+
+               .modal-state:checked + .modal___bg .modal__inner {
+                   top: 0;
+               }
+
+       .modal__inner {
+           background-image: url("/images/white-bg.png");
+           background-repeat: repeat;
+           transition: top .25s ease;
+           position: absolute;
+           top: -20%;
+           right: 0;
+           bottom: 0;
+           left: 0;
+           width: 60%;
+           margin: auto;
+           /*overflow: auto;*/
+           background: #fff;
+           border-radius: 5px;
+           padding: 1em 2em;
+           height: 80%;
+       }
+
+       .modal__close {
+           position: absolute;
+           right: 1em;
+           top: 1em;
+           width: 1.1em;
+           height: 1.1em;
+           cursor: pointer;
+       }
+
+           .modal__close:after,
+           .modal__close:before {
+               content: '';
+               position: absolute;
+               width: 2px;
+               height: 1.5em;
+               background: #ccc;
+               display: block;
+               transform: rotate(45deg);
+               left: 50%;
+               margin: -3px 0 0 -1px;
+               top: 0;
+           }
+
+           .modal__close:hover:after,
+           .modal__close:hover:before {
+               background: #aaa;
+           }
+
+           .modal__close:before {
+               transform: rotate(-45deg);
+           }
+
+
+       .btn:active {
+           background: #27ae60;
+           box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
+       }
+
+       .btn--blue {
+           background: #2980b9;
+       }
+
+           .btn--blue:hover,
+           .btn--blue:focus {
+               background: #3498db;
+           }
+
+           .btn--blue:active {
+               background: #2980b9;
+           }
+</style>
+
+<div class="bread_main">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@System.Configuration.ConfigurationManager.AppSettings["Pathin"]">Home</a></li>
+            <li class="active">Download</li>
+        </ol>
+    </div>
+</div>
+
+<section class="Terms_form">
+    <div class="container">
+        <h1 class="terms_cond">DOWNLOAD</h1>
+
+
+
+
+        @*<div class="tran_main">
+            <h1><img src="images/templates.png">PRINCE2<sup>&reg;</sup> Templates</h1>
+            <div class="terms_include download">
+                <p>Useful document examples for project professionals.</p>
+                <ul>
+                    <li><a href="documents/Format_for_Project_Report_13-14.doc" download="FileName" onclick="a(this.href);"><label class="" for="modal-1" style="cursor: pointer;"><img src="images/office.png">PRINCE2<sup>&reg;</sup> Business Case Template</label></a></li>
+                    <li><a href="documents/Format_for_Project_Report_13-14.doc" onclick="a(this.href)"><img src="images/gener.png"><label class="" for="modal-1" style="cursor: pointer;">PRINCE2<sup>&reg;</sup> Templates</label></a></li>
+                    <li><a href="documents/p.pdf" onclick="a(this.href)"><img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;">Example PRINCE2<sup>&reg;</sup></label> <label class="" for="modal-1" style="cursor: pointer;">Business Case</label></a></li>
+
+                    <li><a href="documents/p.pdf" onclick="a(this.href)"><img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;">Sample Project Initiation Document </label></a></li>
+
+                    <li><a href="documents/p.pdf" onclick="a(this.href)"><img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;">Sample Project Brief</label></a></li>
+                </ul>
+
+
+
+            </div>
+        </div>*@
+        <div class="tran_main">
+            <h1><img src="images/case-study.png" />PRINCE2<sup>&reg;</sup> Case Studies</h1>
+            <div class="terms_include download">
+                <p>Individuals and organisations who've implemented PRINCE2<sup>&reg;</sup>.</p>
+
+                <ul>
+                    <li>
+                        <a href="documents/the-port-of-rotterdam-and-maasvlakte-2.pdf" target="_tab" onclick="a(this.href)" ><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;"> The Port of Rotterdam and Maasvlakte 2</label></a>
+                        <p>This case study provides the background to this huge £2 billion infrastructure project, which has employed 20,000 people, is now running ahead of time and remains within scope and is on budget and how this was possible. </p>
+                    </li>
+
+                    <li>
+                        <a href="documents/prince2-brings-projects-together-at-DPS.pdf" onclick="a(this.href)"><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;"> PRINCE2® brings projects together at DPS </label> </a>
+                        <p>In 2007 the Product and Service Development Branch made the decision to implement a single project management methodology, leading to the introduction of PRINCE2®. What has followed has been a remarkable change in how projects are delivered.</p>
+                    </li>
+
+                    <li>
+                        <a href="documents/prince2-2009-pilot-case-study-british-council.pdf" onclick="a(this.href)"><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;"> British Council: PRINCE2® 2009 Pilot Case Study</label></a>
+                        <p>The Global Information Systems Programme Management team at the British Council has used PRINCE2 2009 to help deliver technical change in many countries around the world.</p>
+                    </li>
+                    <li>
+                        <a href="documents/suffolk-council-prince2-2009-pilot-case-study.pdf" onclick="a(this.href)"><img src="images/pdf.png" onclick="a(this.href)"> <label class="" for="modal-1" style="cursor: pointer;">Suffolk Council PRINCE2® 2009 Pilot Case Study </label></a>
+                        <p>In 2007 Suffolk County Council started a major transformation programme called 'Securing the Future' to tackle significant budget challenges.</p>
+                    </li>
+                    <li>
+                        <a href="documents/implementation-project-achieving-excellence-through-employee-development-case-study.pdf"><img src="images/pdf.png" onclick="a(this.href)"> <label class="" for="modal-1" style="cursor: pointer;"> PRINCE2® Implementation: Achieving Excellence Through Employee Development</label> </a>
+                        <p>The PRINCE2 methodology was adopted with training for personnel and development of an appropriate governance structure for implementation.</p>
+                    </li>
+                    <li>
+                        <a href="documents/prince2-for-federal-government-projects.pdf" onclick="a(this.href)"><img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;">  US Federal Government IT Projects</label> </a>
+                        <p>How PRINCE2<sup>&reg;</sup> supports US Federal government project managers as they deliver IT projects and investments.</p>
+                    </li>
+                    <li>
+                        <a href="documents/a4-australian-department-of-parliamentary-services-cs.pdf" onclick="a(this.href)"><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;"> Australian Department of Parliamentary Services </label> </a>
+                        <p>How PRINCE2<sup>&reg;</sup> was adopted at the DPS in Australia, and how it has made a remarkable change in how projects are delivered across the department.</p>
+                    </li>
+                    <li>
+                        <a href="documents/a4-transpower.pdf" onclick="a(this.href)"><img src="images/pdf.png">  <label class="" for="modal-1" style="cursor: pointer;"> Transpower </label> </a>
+                        <p>How PRINCE2<sup>&reg;</sup> has helped Transpower maintain New Zealand's high voltage electricity transmission grid, and plan for future energy needs.</p>
+                    </li>
+                    <li>
+                        <a href="documents/environment-canada-application-brief.pdf" onclick="a(this.href)"><img src="images/pdf.png">  <label class="" for="modal-1" style="cursor: pointer;"> Environment Canada  </label> </a>
+                        <p>PRINCE2<sup>&reg;</sup> is helping Environment Canada to coordinate a broad spectrum of environmental policies and programmes.</p>
+                    </li>
+                    <li>
+                        <a href="documents/a4-australian-vocalink.pdf" onclick="a(this.href)"><img src="images/pdf.png">  <label class="" for="modal-1" style="cursor: pointer;"> PRINCE2 Helps To Deliver Excellence At Vocalink  </label>  </a>
+                        <p>The organisation uses PRINCE2<sup>&reg;</sup> to plan its project delivery, including real time money transfer system between banks in the UK.</p>
+                    </li>
+                    <li>
+                        <a href="documents/a4-university-western-library.pdf" target="_blank" onclick="a(this.href)"><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;"> University of Western Australia: Project Management & Cultural Change  </label> </a>
+                        <p>How the management of projects at the University of Western Australia library have been transformed with PRINCE2<sup>&reg;</sup>.</p>
+                    </li>
+
+                    <!-- <li><a href=""><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;">  Using PRINCE2 to Manage US Federal Government IT Projects, by Richard Tucker, PMP ICOR Partners, LLC   </label> </a>
+                    <p>How the management of projects at the University of Western Australia library have been transformed with PRINCE2<sup>&reg;</sup>.</p> >
+                    </li> -->
+                    <!-- <li><a href=""><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;">   How project management skills are helping the Republic of Macedonia   </label> </a>
+                    <p>How the management of projects at the University of Western Australia library have been transformed with PRINCE2<sup>&reg;</sup>.</p>
+                    </li> -->
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="tran_main">
+            <h1><img src="images/exam-resorces.png" />PRINCE2<sup>&reg;</sup> White paper</h1>
+            <div class="terms_include download">
+                <p>Why should my organisation use PRINCE2<sup>&reg;</sup> and how can I achieve benefits for the organisation?</p>
+
+                <ul>
+
+                    <li>
+                        <a href="documents/programme-and-project-accountability-the-governance-of-capital-investments-white-paper.pdf" onclick="a(this.href)"><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;"> Programme and Project Accountability: The Governance of Capital Investments</label> </a>
+                        <p>This White Paper reviews general guidance for effective governance and explores how, when used appropriately, PRINCE2® supports good governance.</p>
+                    </li>
+
+
+                    <!-- <li><a href="" onclick="a(this.href)"><img src="images/pdf.png"><label class="" for="modal-1 " style="cursor: pointer;"> Programme and Project Accountability: The Governance of Capital Investments</label></a>
+                    <p>TThis White Paper reviews general guidance for effective governance and explores how, when used appropriately, PRINCE2® supports good governance.</p>
+                    </li> -->
+
+                    <li>
+                        <a href="documents/prince2-in-one-thousand-words-white-paper.pdf" onclick="a(this.href)"><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;"> PRINCE2® in One Thousand Words</label> </a>
+                        <p>In this White Paper, lead author of PRINCE2 2009 and Director of Outperform UK Ltd Andy Murray gives an overview of PRINCE2, discussing the benefits, principles, themes and processes involved.</p>
+
+                    </li>
+
+                    <li>
+                        <a href="documents/prince2-and-governance-white-paper.pdf" onclick="a(this.href)"><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;">PRINCE2® and Governance</label></a>
+                        <p>This White Paper reviews general guidance for effective governance and explores how, when used appropriately, PRINCE2® supports good governance.</p>
+                    </li>
+                    <li>
+                        <a href="documents/prince2-for-small-scale-projects-white-paper.pdf" onclick="a(this.href)"><img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;"> PRINCE2® for Small-Scale Projects</label></a>
+                        <p>This white paper explains the rationale for a ‘light-touch’ approach to the management of small projects based on PRINCE2®.</p>
+
+                    </li>
+
+                    <li>
+                        <a href="documents/prince2-business-benefits-white-paper.pdf" onclick="a(this.href)"><img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;"> PRINCE2® Business Benefits</label></a>
+                        <p>This white paper discusses the business benefits that organisations can attain by adopting a structured, controlled, repeatable and robust project management method.</p>
+
+                    </li>
+
+                    <li>
+                        <a href="documents/integrating-dsdm-into-an-existing-prince2-environment-white-paper.pdf" onclick="a(this.href)">
+                            <img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;">
+                                Integrating DSDM into an Existing PRINCE2® Environment
+                            </label>
+                        </a>
+                        <p>This white paper describe the benefits of running PRINCE2 and DSDM together and provides a general overview on how to achieve this.</p>
+
+                    </li>
+
+                    <li>
+                        <a href="documents/prince2-and-the-national-and-international-standards.pdf" onclick="a(this.href)">
+                            <img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;">
+                                PRINCE2® and the National and International Standards
+                            </label>
+                        </a>
+                        <p>This white paper is intended to show how PRINCE2® can be used to help organizations ensure their project management approach meets the requirements of BS6079 Part 1 ISO21500.</p>
+
+                    </li>
+
+
+                    <li>
+                        <a href="documents/it-s-all-about-winning.pdf" onclick="a(this.href)">
+                            <img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;">
+                                It’s all about winning
+                            </label>
+                        </a>
+                        <p>Departments and organizations have steadily become leaner and we have reached the point where further activity cannot be undertaken without additional resources being made available. </p>
+
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+        @*<div class="tran_main">
+            <h1><img src="images/exam-resorces.png" />PRINCE2<sup>&reg;</sup> Exam Resources</h1>
+            <div class="terms_include download">
+                <p>Why should my organisation use PRINCE2<sup>&reg;</sup> and how can I achieve benefits for the organisation?</p>
+
+                <ul>
+                    <li>
+                        <a href="" onclick="a(this.href)"><img src="images/pdf.png"><label class="" for="modal-1" style="cursor: pointer;"> PRINCE2<sup>®</sup> Glossary of Terms</label> </a>
+                        <p>PRINCE2<sup>®</sup> Glossary © APM Group 2009</p>
+                    </li>
+
+                    <li>
+                        <a href="" onclick="a(this.href)"><img src="images/gener.png"> <label class="" for="modal-1" style="cursor: pointer;"> PRINCE2<sup>&reg;</sup> Mini Quiz </label> </a>
+                        <p>A sample of the PRINCE2<sup>&reg;</sup> exam simulator from our PRINCE2<sup>&reg;</sup> Foundation course.</p>
+                        <p>Download Instructions: Click to ‘extract’ the downloaded file, then simply double click on the Start icon.</p>
+                    </li>
+
+                    <li>
+                        <a href="" onclick="a(this.href)"><img src="images/pdf.png"> <label class="" for="modal-1" style="cursor: pointer;">11 Point Plan for Passing your PRINCE2<sup>&reg;</sup> Exams</label></a>
+                        <p>Passing exams is never simple but we can take the pain out of the experience so that you gain the qualifications you need to progress your career.</p>
+                    </li>
+                    <li>
+                        <a href="" onclick="a(this.href)"><img src="images/gener.png"><label class="" for="modal-1" style="cursor: pointer;"> Managing Risk Mini Quiz</label></a>
+                        <p>A sample of the simulated RISK exam from our Managing Risk in Projects course.</p>
+                        <p>Download Instructions: Click to ‘extract’ the downloaded file, then simply double click on the Start icon</p>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>*@
+
+
+
+
+    </div>
+
+
+</section>
+
+
+
+<input class="modal-state" id="modal-1" type="checkbox" />
+
+<div class="modal___bg">
+    <label class="modal__bg" for="modal-1"></label>
+    <div class="modal__inner">
+        <a href="#" onclick="b()"> <label class="modal__close" for="modal-1"></label></a>
+        <div class="contact_form clearfix">
+@using (Html.BeginForm("Index", "downloadprince2"))
+{
+            <form role="form" action="" method="post" id="formdownload" name="form1" type="application/pdf" target="_blank">
+                <div class="col-md-6">
+                    <input type="hidden" name="filename" value="" id="filename" />
+                    <div class="form-group">
+                        <label for="text" class="col-sm-4 control-label">First Name*</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputFName" id="InputFName" placeholder="" required>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user form-control-feedback"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="col-sm-4 control-label">company*</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="Inputcmp" name="Inputcmp" placeholder="" required>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase form-control-feedback"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <label for="text" class="col-sm-4 control-label">country*</label>
+                        <select class="form-control" placeholder="country" id="ddlcountry" name="ddlcountry">
+                            <option>Australia</option>
+                            <option>India</option>
+                            <option>New Zealand</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-4 control-label">Email*</label>
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="" required>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope form-control-feedback"></i></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label for="email" class="col-sm-4 control-label">Last Name*</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="InputLname" name="InputLname" placeholder="" required>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user form-control-feedback"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="text" class="col-sm-4 control-label">Job Title</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="InputJtitle" name="InputJtitle" placeholder="">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase form-control-feedback"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="number" class="col-sm-4 control-label">Phone*</label>
+                        <div class="input-group">
+                            <input type="tel" class="form-control" id="mobileno" name="mobileno" placeholder="" pattern="[0-9]{10,10}" maxlength="10" required>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone form-control-feedback"></i></span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+<div class="other">
+    <div class="col-md-12">
+        <div class="col-md-12">
+            <div class="col-sm-4">
+                <label style="font-size:16px">Other Details</label><br/>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-sm-5">
+                <label>Are you interested in PRINCE2 for:*</label>
+            </div>
+            <div class="col-sm-2">
+                <label class="radio-inline">
+                    <input type="radio" name="yesno" id="inlineRadio1" value="Indiviual"> <label>Indiviual</label>
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label class="radio-inline">
+                    <input type="radio" name="yesno" id="inlineRadio1" value="Company"> <label>Company</label>
+                </label>
+            </div>
+
+        </div><br/>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <div class="col-sm-5"><label>Any Queries?</label></div>
+                <div class="input-group">
+                    <textarea name="InputMessage" id="InputMessage" class="form-control enqur" rows="5" required>Queries?</textarea>
+                    <span class="input-group-addon text_addon"><i class="glyphicon glyphicon-comment form-control-feedback"></i></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="check1">
+                <div class="col-md-12">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="chk1" id="blankCheckbox" value="Please contact me about project management recruitment" aria-label="..."><label name="ch1" style="font-weight:700;color:black">Please contact me about project management recruitment</label>
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="chk2" id="blankCheckbox" value="Tick this box if you wish to be subscribed to the HSRS monthly newsletter" aria-label="..."><label name="ch2" style="font-weight:700;color:black">Tick this box if you wish to be subscribed to the HSRS monthly newsletter</label>
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="chk3" id="blankCheckbox" value="Tick this box if you wish to receive special offers from HSRS" aria-label="..."><label name="ch3" style="font-weight:700;color:black">Tick this box if you wish to receive special offers from HSRS</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                <div class="col-md-12">
+                    <!-- <div class="form-group">
+                      <div class="input-group">
+                        <textarea name="InputMessage" id="InputMessage" class="form-control enqur" rows="5" required>Enquiry</textarea>
+                        <span class="input-group-addon text_addon"><i class="glyphicon glyphicon-comment form-control-feedback"></i></span></div>
+                    </div> -->
+                    <div class="col-md-12" style="padding:0;">
+
+                        <!--  <button type="submit"  name="submit" id="submit" value="Submit" class="Proceed_previous pull-right" onclick="submit()">
+                           submit
+                         </button> -->
+                        <input type="submit" name="submit" id="submit" value="Submit" class="Proceed_previous pull-right">
+
+                    </div>
+                </div>
+
+            </form>
+}
+        </div>
+    </div>
+</div> 
+<script>
+    $(document).click(function () {
+        $("#toggle li").toggle("slide");
+    });
+
+    function a(b) {
+        $("#filename").val(b);
+        $("#formdownload").attr('action', b);
+        // $("a[target!='_blank'][href$='.pdf']").attr("target", "_blank");
+        // window.open('href$=.pdf','_blank');
+    }
+    function b() {
+        $("#formdownload").attr('action', '');
+        document.form1.reset();
+    }
+    $(document).ready(function () {
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
+    });
+
+
+    $(function () {
+
+        var $table = $('table').tablesorter({
+            theme: 'blue',
+            widgets: ["zebra", "filter"],
+            widgetOptions: {
+                // filter_anyMatch replaced! Instead use the filter_external option
+                // Set to use a jQuery selector (or jQuery object) pointing to the
+                // external filter (column specific or any match)
+                filter_external: '.search',
+                // add a default type search to the first name column
+                filter_defaultFilter: { 1: '~{query}' },
+                // include column filters
+                filter_columnFilters: true,
+                filter_placeholder: { search: 'Search...' },
+                filter_saveFilters: true,
+                filter_reset: '.reset'
+            }
+        });
+
+    });
+</script>
+

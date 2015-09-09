@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Paymentsuccess";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="Detail_main">
+    <div class="container" align="center">
+        <input type="hidden" id="ctype" name="ctype" value="@TempData["Ctype"]" />
+        <input type="hidden" id="cname" name="cname" value="@TempData["CName"]" />
+      
+        @*<input type="hidden" id="mail" name="mail" value="@TempData["email"]" />*@
+        <div class="payment_detail" align="center">
+            <div class="row setup-content" id="step-4" style="margin-top:100px;margin-bottom:100px">
+
+                <div class="Payment_sucess">
+                   
+                    @if (!String.IsNullOrEmpty(Request.QueryString["vpc_Message"]) && Request.QueryString["vpc_Message"].ToString() == "Approved")
+                    {
+                        string referenceno = (!string.IsNullOrEmpty(Request.QueryString["vpc_ReceiptNo"])) ? Request.QueryString["vpc_ReceiptNo"].ToString() : "0";
+                        string amt = (!string.IsNullOrEmpty(Request.QueryString["vpc_Amount"])) ? Request.QueryString["vpc_Amount"].ToString() : "0";
+                        double amount = Convert.ToDouble(amt) / 100;
+                       
+                        <div class="alert alert-success" role="alert">Your payment has been processed successfully.Here are the details of this transaction for your reference-<br/><p> Reference No : @referenceno</p> Amount Paid : $ @amount.ToString("0.00")</div>
+    @*We will process the booking and send you an email with invoice. The email and invoice will contain payment details. Payments may be made by electronic funds transfer, credit card or cheque. All payments must use the invoice number as a payment reference.*@@*Your Order has been processed successfully*@
+                    }
+                    else if (!String.IsNullOrEmpty(Request.QueryString["vpc_Message"]) && Request.QueryString["vpc_Message"].ToString() == "Declined")
+                    {
+                        <div class="alert alert-success" role="alert" style="background-color:white; border-color:white; color:red;">Sorry!! Transaction Declined. Please contact issuing bank for more details</div>
+                    }
+                    else if (!String.IsNullOrEmpty(Request.QueryString["vpc_Message"]) && Request.QueryString["vpc_Message"].ToString() == "Referred")
+                    {
+                        <div class="alert alert-success" role="alert" style="background-color:white; border-color:white; color:red;">Sorry!! Transaction Declined. Please contact issuing bank for more details</div>
+                    }
+                    else if (!String.IsNullOrEmpty(Request.QueryString["vpc_Message"]) && Request.QueryString["vpc_Message"].ToString() == "Timed Out")
+                    {
+                        <div class="alert alert-success" role="alert" style="background-color:white; border-color:white; color:red;">Sorry!! Transaction Timed out. Please try again.</div>
+                    }
+                    else if (!String.IsNullOrEmpty(Request.QueryString["vpc_Message"]) && Request.QueryString["vpc_Message"].ToString() == "Expired Card")
+                    {
+                        <div class="alert alert-success" role="alert" style="background-color:white; border-color:white; color:red;">Sorry!! Transaction Failed. Your card has Expired</div>
+                    }
+                    else if (!String.IsNullOrEmpty(Request.QueryString["vpc_Message"]) && Request.QueryString["vpc_Message"].ToString() == "Insufficient Funds")
+                    {
+                        <div class="alert alert-success" role="alert" style="background-color:white; border-color:white; color:red;">Sorry!! Transaction Failed due to insufficient credit.</div>
+                    }
+                    else if (!String.IsNullOrEmpty(Request.QueryString["vpc_Message"]) && Request.QueryString["vpc_Message"].ToString() == "Unspecified Failure")
+                    {
+                        <div class="alert alert-success" role="alert" style="background-color:white; border-color:white; color:red;">Sorry!! Transaction could not be processed. Please try after sometime.</div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-success" role="alert" style="background-color:white; border-color:white; color:red;">Sorry!! Transaction could not be processed. Please try after sometime.</div>
+                    }
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (!String.IsNullOrEmpty(Request.QueryString["vpc_Message"]) && Request.QueryString["vpc_Message"].ToString() == "Approved")
+{
+    Session["ref_no"] = (!string.IsNullOrEmpty(Request.QueryString["vpc_ReceiptNo"])) ? Request.QueryString["vpc_ReceiptNo"].ToString() : "0";
+    Session["amount"] = (!string.IsNullOrEmpty(Request.QueryString["vpc_Amount"])) ? Request.QueryString["vpc_Amount"].ToString() : "0";
+<script>
+    var ctype = $("#ctype").val();
+    var cname = $("#cname").val();
+    $.ajax({
+        url: "@System.Configuration.ConfigurationManager.AppSettings["Path"]/paymentsuccess/sendmail/" + ctype + "/" + cname, success: function (result) {
+
+        }
+    });
+</script>
+}

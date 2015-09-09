@@ -1,0 +1,193 @@
+﻿@{
+    ViewBag.Canonical = "http://www.hsrsglobal.com.au/privacypolicy";
+    ViewBag.MetaDescription = "HSRS Global have terms and conditions for the course registration & for payment methods, which will give clear image how course should be registered online";
+    ViewBag.MetaKeywords = "proforma invoice, payment terms, terms of payment, project management terms, payment terms and conditions, invoice payment terms, international payment terms, project management agreement, project manager agreement, project management terms and conditions";
+    ViewBag.Title = "Prince2 Payment Terms Australia | HSRS Global Proforma Invoice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bread_main">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]">Home</a></li>
+            <li class="active">Terms & Conditions</li>
+        </ol>
+    </div>
+</div>
+
+
+<section class="Terms_form">
+    <div class="container">
+        <h1 class="terms_cond">Privacy Policy</h1>
+
+        <div class="tran_main">
+            <p>This privacy policy sets out the way in which HSRS Global handles personal information.</p>
+            <h1>  Privacy at HSRS Global</h1>
+            <div class="terms_include">
+                <p>HSRS Global Training and Consulting (ABN 87 220 292 670), gives importance on protecting your personal information. HSRS deals with personal information in accordance with the Australian Privacy Principles (APPs) which are contained in the Privacy Act 1988 (Privacy Act) and this privacy policy.</p>
+
+
+            </div>
+        </div>
+
+
+        <div class="tran_main">
+            <h1> What is personal information?</h1>
+            <div class="terms_include">
+                <p>Personal information is information or an opinion that identifies an individual or allows their identity to be readily worked out from the information. It includes information such as a person’s name, address, financial information, marital status or billing details.</p>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="tran_main">
+            <h1> What personal information do we collect?</h1>
+            <div class="terms_include">
+                <p>
+                    Personal information is collected to provide training services, to conduct our business and to improve customer service.
+                </p>
+
+                <p>Typically, we collect the following personal information:</p>
+                <ul>
+                    <li>Name</li>
+                    <li>
+                        Title or Position
+                    </li>
+                    <li>
+                        Address
+                    </li>
+                    <li> Email Address</li>
+                    <li> Phone Number</li>
+                    <li> Pages you have visited on the website</li>
+                    <li> Demographic information such as postcode, preferences and interests</li>
+                    <li> Other information relevant to customer surveys and/or offers.</li>
+                </ul>
+
+
+            </div>
+        </div>
+
+
+        <div class="tran_main">
+            <h1> What we do with the information that we gather?</h1>
+            <div class="terms_include">
+                <p>We require this information to understand your needs and provide you with a better service, and in particular for the following reasons:</p>
+
+
+                <ul>
+                    <li> Internal record keeping</li>
+                    <li>
+                        To improve our products and services
+                    </li>
+                    <li>
+                        We and third-party vendors, including Google, may use the information to inform, optimize, and serve ads based on your past visits to this website
+                    </li>
+                    <li> We may periodically send promotional emails about new products, special offers or other information which we think you may find useful using the email address you have provided</li>
+                    <li> From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, phone, fax or mail. We may use the information to customise the website according to your interests.</li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <div class="tran_main">
+            <h1> How do we store and secure personal information?</h1>
+            <div class="terms_include">
+                <p>We are committed to ensuring that your information is secure. In order to prevent unauthorised access or disclosure, we have put in place suitable physical and managerial procedures to safeguard and secure the information we collect online.</p>
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="tran_main">
+            <h1> Using our website</h1>
+            <div class="terms_include">
+                <p>HSRS Global uses cookies to record the preferences of visitors, helping us to optimise the design of our website. Cookies are small text files that are place on your computer by websites that you visit. They help us give you content that is more accurately suited to your needs and so improve our service to you</p>
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="tran_main">
+            <h1>  Changes to our privacy policy</h1>
+            <div class="terms_include">
+                <p>
+                    We may change this privacy policy from time to time. Any updated versions of this privacy policy will be posted on our website. Please review it regularly.
+                    This privacy policy was last updated on 24 December 2014.
+                </p>
+
+
+
+
+
+            </div>
+        </div>
+        <div class="tran_main">
+            <h1>  Contacting us</h1>
+            <div class="terms_include">
+                <p>If you have any questions about this privacy policy, please contact our Privacy Officer as follows:</p>
+                <p>The Privacy Officer</p>
+                <p>
+                    Email: info@HSRSGlobal.com</br>
+                    Phone: 1300 79 29 07</br>
+                    HSRS Global </br>
+                    Suite 10, 102 Gloucester Street,</br>
+                    The Rocks Sydney </br>
+                    New South Wales, Australia 2000</br>
+                </p>
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+</section>
+<script>
+    $(document).ready(function() {
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
+    });
+
+
+    $(function() {
+
+        var $table = $('table').tablesorter({
+            theme: 'blue',
+            widgets: ["zebra", "filter"],
+            widgetOptions : {
+                // filter_anyMatch replaced! Instead use the filter_external option
+                // Set to use a jQuery selector (or jQuery object) pointing to the
+                // external filter (column specific or any match)
+                filter_external : '.search',
+                // add a default type search to the first name column
+                filter_defaultFilter: { 1 : '~{query}' },
+                // include column filters
+                filter_columnFilters: true,
+                filter_placeholder: { search : 'Search...' },
+                filter_saveFilters : true,
+                filter_reset: '.reset'
+            }
+        });
+
+    });</script>
+</script> 

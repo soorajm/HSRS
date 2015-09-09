@@ -1,0 +1,237 @@
+﻿
+@{
+    ViewBag.Title = "Contact_us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (TempData["message"] != null)
+    {
+        <script>
+            alert('@(TempData["message"])')
+        </script>
+    }
+}
+@using (Html.BeginForm("Contact", "contactus"))
+{
+<section class="slider">
+    <img src="@System.Configuration.ConfigurationManager.AppSettings["Pathin"]/images/contact-banner.jpg" class="slider_img" />
+    <div class="slider_caption">
+        <div class="container">
+            CONTACT US
+        </div>
+    </div>
+</section>
+
+<div class="bread_main">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@System.Configuration.ConfigurationManager.AppSettings["Pathin"]">Home</a></li>
+            <li class="active">Contact</li>
+        </ol>
+    </div>
+</div>
+
+<section class="Our_contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="contact_para">
+                    <p>Use the form below to ask us if you have any questions. You'll be contacted as soon as  possible after your inquiry has been received. Submitting this form is absolutely obligation-free.</p>
+                    <p>
+                        Alternatively, just call us on Bangalore +91 41107198 or send an email to: <a href="mailto:info@hsrsglobal.com.au">info@HSRSGlobal.com</a>
+                    </p>
+
+                    <div class="contact_form clearfix">
+                        <h1>SEND US A MESSAGE !</h1>
+
+
+                        <!--Success
+                        <div class="alert alert-success"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent. (If form ok!)</strong></div> -->
+                        <!--Error
+
+                            <div class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs. (If form error!)</strong></div>
+
+                             <div class="well well-sm"><strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Required Field</strong></div> -->
+
+
+                        <form role="form" action="" method="post">
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <div class="input-group">
+
+                                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="First Name*" required>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user form-control-feedback"></i></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="tel" class="form-control" id="Inputmob" name="Inputmob" placeholder="Mobile*" pattern="[0-9]{10,10}" maxlength="10" required>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone form-control-feedback"></i></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group" style="width:100%">
+                                        <select class="form-control" id="country" name="country">
+                                            <option value="0">Select Country</option>
+                                            <option value="Australia">Australia</option>
+                                            <option value="India">India</option>
+                                            <option value="New Zealand">New Zealand</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="InputLName" id="InputLName" placeholder="Last Name*" required>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user form-control-feedback"></i></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email*" required>
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope form-control-feedback"></i></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <textarea name="InputMessage" id="InputMessage" class="form-control enqur" rows="5" required>Enquiry</textarea>
+                                        <span class="input-group-addon text_addon"><i class="glyphicon glyphicon-comment form-control-feedback"></i></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="InputReal" class="question">Question* @ViewBag.first+@ViewBag.sec = </label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control ques_ans" name="InputReal" id="InputReal" required>
+                                    </div>
+                                </div>
+                                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-blue pull-left">
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="address">
+                    <h1>AUSTRALIA</h1>
+                    <address>
+                        <p>Training location: HSRS Global</p>
+                        600 Little Burke Street, Melbourne, <br>
+                        Victoria  Australia 3000,
+                        <br><br />
+                        Postal address: HSRS Global, <br />
+                        12 Andrew Street,Melbourne, Victoria, Australia 3166
+                    </address>
+
+                    <label style="padding-right 5px;">Email: &nbsp;</label> <a href="mailto:info@hsrsglobal.com">info@HSRSGlobal.com</a><br>
+                    <label style="padding-right 5px;">Phone: &nbsp;</label>1300 79 29 07
+                </div>
+                <div class="address">
+                    <h1>INDIA</h1>
+                    <address>
+                        <p>HSRS Global</p>
+                        #603,First Floor, 19th Main,<br>
+                        3rd Sector, HSR Layout,
+                        <br>
+                        Bangalore, India – 560102
+                    </address>
+
+                    <label style="padding-right 5px;">Email: &nbsp;</label><a href="mailto:info@hsrsglobal.com">info@HSRSGlobal.com</a><br>
+                    <label style="padding-right 5px;">Phone: &nbsp;</label>+91 80 41107198
+                </div>
+                <div class="address">
+                    <h1>NEW ZEALAND</h1>
+                    <address>
+                        <p>HSRS Global</p>
+                        Suite 10, 102 Gloucester Street, <br>
+                        The Rocks
+                        Sydney,
+                        <br>
+                        New South Wales Australia 2000, <br /><br />
+                        Postal address: HSRS Global, <br />
+                        12 Andrew Street, Oakleigh 3166, <br />
+                        Australia
+
+                    </address>
+
+                    <label style="padding-right 5px;">Email: &nbsp;</label><a href="mailto:info@hsrsglobal.com">info@HSRSGlobal.com</a><br>
+                    <label style="padding-right 5px;">Phone: &nbsp;</label>1300 79 29 07
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+}
+
+<!-- <section class="maps">
+<div class="container">
+<div class="maps_section">
+<div id="map-canvas"></div>
+</div>
+<a href="">View Larger Map</a>
+</div>
+</section> -->
+<script>
+    function ValidateEmail(email) {
+        var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return expr.test(email);
+    };
+    $("#submit").click(function () {
+        var droptext = $("#country option:selected").text();
+        if (droptext == 'Select Country') {
+            alert("Please Select Your Country");
+            $("#country").focus();
+            return false;
+        }
+        var email = $("#InputEmail").val();
+        if (email == "" || email == null) {
+            alert("Please Enter Your Email address ");
+            $("#emailnews").focus();
+            return false;
+        }
+        else if (email != "" || email != null) {
+            if (!ValidateEmail(email)) {
+                alert("Invalid email address.");
+                $("#InputEmail").focus();
+                return false;
+            }
+        }
+    });
+
+    $("#Inputmob").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57 || e.keyCode == 46)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+</script>
+@{
+    <script>
+        $("#InputReal").change(function () {
+            var res = parseInt(@ViewBag.first)+parseInt(@ViewBag.sec)
+            if ($("#InputReal").val() != res && $("#InputReal").val() !="")
+            {
+                $("#InputReal").val("");
+                alert('Please Enter Correct Value')
+            }
+        });
+    </script>
+}

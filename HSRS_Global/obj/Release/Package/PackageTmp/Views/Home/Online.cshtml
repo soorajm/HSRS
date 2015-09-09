@@ -1,0 +1,1054 @@
+﻿@{
+    ViewBag.MetaDescription = "HSRS Global best prince2 online training centre in Melbourne provides the facility to register PRINCE2 Foundation Online Elearning, Exam & OGC Book Package";
+    ViewBag.MetaKeywords = "prince2 foundation, prince2 training, prince2 foundation exam, what is prince2, e learning companies, prince2 register, prince2 online course, prince2 training online, prince2 online exam, prince2 training melbourne, prince2 mock exam, prince2 elearning, prince2 training courses, prince2 online courses, prince 2 online training";
+    ViewBag.Canonical = "http://www.hsrsglobal.com.au/prince2onlinetraining";
+    ViewBag.Title = "Prince2 Register Online Courses in Australia | What is Prince2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="slider">
+    <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/slider.jpg" class="slider_img" />
+    <div class="slider_caption">
+        <div class="container">
+            ONLINE
+        </div>
+    </div>
+</section>
+
+<div class="bread_main">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]">Home</a></li>
+            <li class="active">Online</li>
+        </ol>
+    </div>
+</div>
+
+
+
+<section class="online_top">
+    <div class="container">
+
+        <div class="lgt_side_tab">
+            <h1>PRINCE2<sup>&reg;</sup> &nbsp;Training - PRINCE2<sup>&reg;</sup> &nbsp;Certification - PRINCE2<sup>&reg;</sup> &nbsp;Course</h1>
+
+            <ul class="online_spin">
+                <li>
+                    <img height="13" src="images/favimg.png">
+                    24 hours access to computer based PRINCE2 training courses
+                </li>
+                <li>
+                    <img height="13" src="images/favimg.png">
+                    Free webinar sessions from our experienced trainers, that will enhance your PRINCE2 knowledge
+                </li>
+                <li>
+                    <img height="13" src="images/favimg.png">
+                    137 chapter-end quizzes
+                </li>
+                <li>
+                    <img height="13" src="images/favimg.png">
+                    Graded lesson level assessments, practice mock exams and a final exam simulator to help you check your understanding at every step of the way
+                </li>
+                <li><img height="13" src="images/favimg.png">Comprehensive online examination guidance</li>
+                <li><img height="13" src="images/favimg.png"> Flexibility to take examinations in one of our centres or online at home.</li>
+                <!-- <li><img height="13" src="images/favimg.png">
+                Select e-Learning package below to start your PRINCE2 course TODAY</li> -->
+            </ul>
+
+            <!--<ul>
+                <li><i class="spin_dot"></i>
+                  World class tutors who understand Australian business</li>
+                  <li><i class="spin_dot"></i>
+            All qualification comes with an exam guarantee*</li>
+                  <li><i class="spin_dot"></i>
+            Highly interactive &amp; tailored to each individual using an i pad</li>
+                  <li><i class="spin_dot"></i>
+            Free templates &amp; course resources.</li>
+                  <li><i class="spin_dot"></i>
+            Free 3 months guidance / assistance after pass, to achieve your goals.</li>
+                  <li><i class="spin_dot"></i>
+            Australian owned &amp; operated.</li>
+                  <li><i class="spin_dot"></i>
+            Free presentation from MD, CIO or recruiters on how to be an effective project manager.</li>
+                  <li><i class="spin_dot"></i>
+            No hidden extra costs. One price overs it all.
+                    </li>
+                </ul>-->
+        </div>
+
+
+
+    </div>
+</section>
+
+
+
+
+<section class="Online_form">
+    <div class="container">
+        <h1>Select an E - Learning package below to start your PRINCE2<sup>&reg;</sup> &nbsp;course TODAY</h1>
+
+        <p class="online_global">
+            HSRS Global will email user-id and password to access online course after registration and payment.  HSRS Global arranges webinar for an hour with PRINCE2<sup>&reg;</sup> &nbsp;trainers who will support you with examination preparation and guidance followed by Q&A for 30 minutes. this is includedd as standard in each online package
+        </p>
+
+        <div class="online_tab clearfix">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 bhoechie-tab-container">
+                        <div class="col-md-5 col-sm-5 bhoechie-tab-menu">
+                            <div class="list-group">
+                            @if (ViewData["AllcouData"] != null)
+                            {
+                                int i = 0;
+                                foreach (System.Data.DataRow dr in (ViewData["AllcouData"] as System.Data.DataTable).Rows)
+                                {
+                                    
+                                    if (i == 0)
+                                    {
+                                        <a href="#" class="list-group-item active text-center">
+                                            @dr["Name"]
+                                            @*PRINCE2<sup>&reg;</sup> Foundation & Practitioner*@
+                                        </a>
+                                        i = i + 1;
+                                    }
+                                    else
+                                    {
+                                        <a href="#" class="list-group-item text-center">
+                                           @dr["Name"]
+                                        </a>
+                                        @*<a href="#" class="list-group-item text-center">
+                                            PRINCE2<sup>&reg;</sup> Foundation
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            PRINCE2<sup>&reg;</sup> Practitioner Upgrade
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            PRINCE2<sup>&reg;</sup> Foundation Online Elearning Exam & OGC Book Package
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            PRINCE2<sup>&reg;</sup> Foundation & Practitioner (Blended Classroom & Elearning)
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            PRINCE2<sup>&reg;</sup> Foundation Online Elearning Only
+                                        </a>
+                                        <a href="#" class="list-group-item text-center">
+                                            PRINCE2<sup>&reg;</sup> Foundation & Practitioner Online Elearning Only
+                                        </a>*@
+                                    }
+                                }
+                            }   
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 bhoechie-tab">
+                            @if (ViewData["AllcouData"] != null)
+                            {
+                                int i = 0;
+                                foreach (System.Data.DataRow dr in (ViewData["AllcouData"] as System.Data.DataTable).Rows)
+                                {
+                                    string[] a = dr["Details"].ToString().Split(',');
+                                    if (i == 0)
+                                    {
+                                        <div class="bhoechie-tab-content active">
+                                            <h1>@dr["Name"]</h1>
+                                            <ul>
+                                                @for (int j = 0; j < a.Length; j++)
+                                                {
+                                                    <li>@a[j].ToString();</li>
+                                                    @*<li>Foundation exam</li>
+                                    <li>
+                                        Practitioner exam
+                                    </li>
+                                    <li>
+                                        e-learning for Foundation
+                                    </li>
+                                    <li>
+                                        e-learning for Practitioner
+                                    </li>
+                                    <li>
+                                        Free official PRINCE2<sup>&reg;</sup> OGC manual including shipping
+                                    </li>
+                                    <li>
+                                        90 days account access from the first date and time of login
+                                    </li>
+                                    <li>
+                                        Free Sample Exam Papers
+                                    </li>
+                                    <li>
+                                        Exam Simulators
+                                    </li>
+                                    <li>
+                                        Webinar with Trainers
+                                    </li>
+                                    <li>
+                                        137 chapter –end quizzes
+                                    </li>*@
+                                                }
+                                            </ul>
+
+                                            <div class="row prince_img">
+                                                <div class="col-md-3">
+                                                    <img src="images/prince2.jpg">
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <a href="contactus"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <a href="onlinecourse/@dr["slug"]">
+                                                        <button class="book_blue">
+                                                            BOOK NOW
+                                                            <h3>$@dr["price"]</h3>
+                                                        </button>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                                i = i + 1;
+                                    }
+                                    else
+                                    {
+                                        <div class="bhoechie-tab-content">
+                                            <h1>@dr["Name"]</h1>
+                                            <ul>
+                                                @for (int j = 0; j < a.Length; j++)
+                                                {
+                                                    <li>@a[j].ToString();</li>
+                                                }
+                                            </ul>
+
+                                            <div class="row prince_img">
+                                                <div class="col-md-3">
+                                                    <img src="images/prince2.jpg">
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <a href="contactus"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <a href="onlinecourse/@dr["slug"]">
+                                                        <button class="book_blue">
+                                                            BOOK NOW
+                                                            <h3>$@dr["price"]</h3>
+                                                        </button>
+                                                    </a>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    }
+                                }
+                            }
+                            @*<!-- flight section -->
+            <div class="bhoechie-tab-content active">
+                <h1>PRINCE2<sup>&reg;</sup> Foundation & Practitioner</h1>
+                <ul>
+                    <li>Foundation exam</li>
+                    <li>
+                        Practitioner exam
+                    </li>
+                    <li>
+                        e-learning for Foundation
+                    </li>
+                    <li>
+                        e-learning for Practitioner
+                    </li>
+                    <li>
+                        Free official PRINCE2<sup>&reg;</sup> OGC manual including shipping
+                    </li>
+                    <li>
+                        90 days account access from the first date and time of login
+                    </li>
+                    <li>
+                        Free Sample Exam Papers
+                    </li>
+                    <li>
+                        Exam Simulators
+                    </li>
+                    <li>
+                        Webinar with Trainers
+                    </li>
+                    <li>
+                        137 chapter –end quizzes
+                    </li>
+
+                </ul>
+
+                <div class="row prince_img">
+                    <div class="col-md-3">
+                        <img src="images/prince2.jpg">
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Home/Contact"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Bookonline/Index/online/PRINCE2 Foundation Practitioner/1400">
+                            <button class="book_blue">
+                                BOOK NOW
+                                <h3>$1400.00</h3>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- train section -->
+            <div class="bhoechie-tab-content">
+                <h1>PRINCE2<sup>&reg;</sup> Foundation</h1>
+                <ul>
+                    <li>Foundation exam</li>
+                    <li>
+                        elearning for Foundation
+                    </li>
+                    <li>
+                        90 days account access from the first date and time of login
+                    </li>
+                    <li>
+                        Free Sample Exam Papers
+                    </li>
+                    <li>
+                        Exam Simulators
+                    </li>
+                    <li>
+                        Global Live Tutor Sessions
+                    </li>
+                    <li>
+                        Webinar with Trainers
+                    </li>
+                    <li>
+                        137 chapter –end quizzes
+                    </li>
+                </ul>
+                <div class="row prince_img">
+                    <div class="col-md-3">
+                        <img src="images/prince2.jpg">
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Home/Contact"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Bookonline/Index/online/PRINCE2 Foundation/1200">
+                            <button class="book_blue">
+                                BOOK NOW
+                                <h3>$1400.00</h3>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- hotel search -->
+            <div class="bhoechie-tab-content">
+                <h1>PRINCE2<sup>&reg;</sup> Practitioner Upgrade</h1>
+                <ul>
+                    <li>Practitioner exam</li>
+                    <li>
+                        elearning for Practitioner
+                    </li>
+                    <li>
+                        90 days account access from the first date and time of login
+                    </li>
+                    <li>
+                        Free Sample Exam Papers
+                    </li>
+                    <li>
+                        Exam Simulators
+                    </li>
+                    <li>
+                        Webinar with Trainers
+                    </li>
+                    <li>
+                        137 chapter –end quizzes
+                    </li>
+                </ul>
+
+                <div class="row prince_img">
+                    <div class="col-md-3">
+                        <img src="images/prince2.jpg">
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Home/Contact"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Bookonline/Index/online/PRINCE2 Practitioner Upgrade/1100">
+                            <button class="book_blue">
+                                BOOK NOW
+                                <h3>$1400.00</h3>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="bhoechie-tab-content">
+                <h1> PRINCE2<sup>&reg;</sup>Foundation Online Elearning Exam & OGC Book Package</h1>
+                <ul>
+                    <li>Foundation exam</li>
+                    <li>
+                        elearning for Foundation
+                    </li>
+                    <li>
+                        90 days account access from the first date and time of login
+                    </li>
+                    <li>
+                        Free official PRINCE2<sup>&reg;</sup>OGC manual including shipping
+                    </li>
+                    <li>
+                        Free Sample Exam Papers
+                    </li>
+                    <li>
+                        Exam Simulators
+                    </li>
+                    <li>
+                        Webinar with Trainers
+                    </li>
+                    <li>
+                        137 chapter –end quizzes
+                    </li>
+                </ul>
+
+                <div class="row prince_img">
+                    <div class="col-md-3">
+                        <img src="images/prince2.jpg">
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Home/Contact"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Bookonline/Index/online/PRINCE2 Foundation Online Elearning Exam OGC Book Package/1000">
+                            <button class="book_blue">
+                                BOOK NOW
+                                <h3>$1400.00</h3>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="bhoechie-tab-content">
+                <h1>PRINCE2<sup>&reg;</sup> Foundation & Practitioner (Blended Classroom & Elearning)</h1>
+                <ul>
+                    <li>Foundation exam</li>
+                    <li>
+                        Practitioner exam
+                    </li>
+                    <li>
+                        elearning for Foundation
+                    </li>
+                    <li>
+                        90 days account access from the first date and time of login
+                    </li>
+                    <li>
+                        Free official PRINCE2<sup>&reg;</sup>OGC manual including shipping
+                    </li>
+                    <li>
+                        Free Sample Exam Papers
+                    </li>
+                    <li>
+                        Exam Simulator
+                    </li>
+                    <li>
+                        2 days of Practitioner Instructor led class
+                    </li>
+                    <li>
+                        Webinar with Trainers
+                    </li>
+                    <li>
+                        137 chapter –end quizzes
+                    </li>
+                </ul>
+
+                <div class="row prince_img">
+                    <div class="col-md-3">
+                        <img src="images/prince2.jpg">
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Home/Contact"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Bookonline/Index/online/PRINCE2 Foundation Practitioner (Blended Classroom Elearning)/5000">
+                            <button class="book_blue">
+                                BOOK NOW
+                                <h3>$1400.00</h3>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="bhoechie-tab-content">
+                <h1>PRINCE2<sup>&reg;</sup> Foundation Online Elearning Only</h1>
+                <ul>
+                    <li>Elearning for Foundation</li>
+                    <li>
+                        90 days account access from the first date and time of login
+                    </li>
+                    <li>
+                        Webinar with Trainers
+                    </li>
+                    <li>
+                        137 chapter –end quizzes
+                    </li>
+                </ul>
+
+                <div class="row prince_img">
+                    <div class="col-md-3">
+                        <img src="images/prince2.jpg">
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Home/Contact"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Bookonline/Index/online/PRINCE2 Foundation Online Elearning Only/400">
+                            <button class="book_blue">
+                                BOOK NOW
+                                <h3>$1400.00</h3>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bhoechie-tab-content">
+                <h1>PRINCE2<sup>&reg;</sup> Foundation & Practitioner Online Elearning Only</h1>
+                <ul>
+                    <li>e-learning for Foundation</li>
+                    <li>
+                        e-learning for Practitioner
+                    </li>
+                    <li>
+                        90 days account access from the first date and time of login
+                    </li>
+                    <li>
+                        Free Sample Exam Papers
+                    </li>
+                    <li>
+                        Exam Simulators
+                    </li>
+                    <li>
+                        Webinar with Trainers
+                    </li>
+                    <li>
+                        137 chapter –end quizzes
+                    </li>
+                </ul>
+
+                <div class="row prince_img">
+                    <div class="col-md-3">
+                        <img src="images/prince2.jpg">
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Home/Contact"><button class="enquiry_green">ENQUIRE ABOUT THIS COURSE</button></a>
+                    </div>
+
+                    <div class="col-md-3">
+                        <a href="Bookonline/Index/online/PRINCE2 Foundation Practitioner Online Elearning Only/1800">
+                            <button class="book_blue">
+                                BOOK NOW
+                                <h3>$1400.00</h3>
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>*@
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</section>
+
+
+
+<section class="Tab_view" id="Tab_view">
+    <div class="Tab_main">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="detail_tab">
+                        <ul id="myTab" class="nav nav-tabs" role="tablist">
+                            <li id="incon" role="presentation" class="active"><a href="#include" role="tab" id="include-tab" data-toggle="tab" aria-controls="include"> Exams</a></li>
+                            <li id="faqon"role="presentation"><a href="#faq" id="faq-tab" role="tab" data-toggle="tab" aria-controls="faq" aria-expanded="true">FAQ's</a></li>
+                            <li id="revon" role="presentation"><a href="#review" role="tab" id="review-tab" data-toggle="tab" aria-controls="review">Course Review</a></li>
+                            <li id="teston" role="presentation"><a href="#testimonial" role="tab" id="testimonial-tab" data-toggle="tab" aria-controls="testimonial">Testimonials</a></li>
+                            <!-- <li role="presentation"><a href="#blog" role="tab" id="blog-tab" data-toggle="tab" aria-controls="blog">Blog</a></li> -->
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+
+                            <div role="tabpanel" class="tab-pane fade in active" id="include" aria-labelledby="include-tab">
+
+                                <ul class="tab_inner online_tab">
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Online Exams</h1>
+
+                                        <ul>
+                                            <li class="list_no">If your elearning package includes the exam, then this section will help you understand the various ways of booking your examination depending on availability and location. If you have not purchased the exam with the package and wish to do so, please contact us on support@hsrsglobal.com.</li>
+                                            <li class="list_no">
+                                                <h1>1. Take Exam at home</h1>
+                                                You can take up your final certification exams at the comfort of your home using the ProctorU technology that is available 24/7. All what you require is a system that meets the following technical specifications:-
+                                                http://www.proctoru.com/tech.php
+
+                                                When you are ready to take the exam, mail us on support@hsrsglobal.com and provide us a date and time to book your exam. We just require a 10 days’ notice from the date you plan to take your exam.
+
+                                            </li>
+                                            <li class="list_no">
+                                                <h1>2. Take Exam at HSRS Global Training Centers or public Exams organised by APMG </h1>
+                                                These exams run only on certain dates at certain locations, and these places are pretty much booked in advance, sometimes there is an 8–12 weeks waiting list.  Please mail us on support@hsrsglobal.com  to assist you.
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+
+                            <div role="tabpIs this course panel" class="tab-pane fade" id="faq" aria-labelledby="faq-tab">
+
+                                <ul class="tab_inner">
+                                    <li>
+                                        <h1><i class="yell_dot"></i>What is PRINCE2<sup>&reg;</sup>?</h1>
+                                        <p>PRINCE2® (PRojects IN Controlled Environments 2nd Version) is a structured project management method for running projects and it is adaptable to any size or type of project or any industry. It is widely used in over 50 countries.</p>
+
+                                        <h2>What are the PRINCE2<sup>&reg;</sup> qualifications and what will they teach me?</h2>
+                                        <p>The PRINCE2<sup>&reg;</sup> Foundation qualification will teach you the PRINCE2<sup>&reg;</sup> principles, themes, and processes and when qualified you will be in a position to understand and discuss on project management methodology and influence project management team for the success of a project.</p><br>
+
+                                        <p>
+                                            The PRINCE2<sup>&reg;</sup> Practitioner qualification will teach you to apply PRINCE2<sup>&reg;</sup> methodology to run and manage a project. Once qualified you will be able to apply and tailor PRINCE2<sup>&reg;</sup> in a project scenario situation. You will have a sound knowledge of principles, themes and processes, and also have the skills to tailor the methodology to suit the project needs and deliver.
+                                        </p><br>
+
+                                        <p>All PRINCE2<sup>&reg;</sup> Practitioners should be re-registered within 3-5 calendar years of their original certification to maintain their Registered Practitioner status. </p><br>
+
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>What is the structure of PRINCE2<sup>&reg;</sup> Foundation exams?</h1>
+                                        <p>A 75 question multiple choice examination with a pass mark of 35 out of 70. The exam duration is 60 minutes.  It is a closed book exam and delegates are not allowed to use any reference material during the exam period. Success in this examination indicates that the candidate would be able to act as an informed member of a project management team using the PRINCE2®  method within a project environment supporting PRINCE2® . Please note that success in the Foundation examination is a prerequisite for that candidate to move forward to the Practitioner examination.</p>
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>What is the structure of PRINCE2<sup>&reg;</sup> Practitioner exams?</h1>
+                                        <p>A 80 question Objective Test Examination with a pass mark of 44 out of 80 (55%). The exam duration is 150 minutes. This is an open book exam and delegates are allowed to use reference material “Managing Successful Projects with PRINCE2® 2009 Edition”. Success in this examination indicates that the candidate could apply PRINCE2® to the running and managing of projects within an environment supporting PRINCE2®. This is the top level of PRINCE2® qualification</p>
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Are there any prerequisites before taking a PRINCE2<sup>&reg;</sup> examination?</h1>
+                                        <p>There are no eligibility criteria to sit for Foundation exams. However a delegate needs to pass Foundation exams or Project Management Professional (PMP)<sup>&reg;</sup> to sit for Practitioner exams.</p><br>
+                                        <p>If a delegate attends Foundation and Practitioner class room type course and sits for exams one after another (normally 5 days course), the trainer or invigilator will access the Foundation exam results. If that delegate passes the exams, he/she will be allowed to sit for Practitioner exams</p><br>
+                                        <p>For Re-Registration candidates must achieve a pass at the Practitioner examination and must also submit their candidate registration number of their expired Practitioner certification</p>
+
+
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>How I can report my PDUs to PMI </h1>
+                                        <p>You will need to complete and submit a PMP Professional Development Activities Reporting Form to PMI. This can be obtained from by visiting www.pmi.org/Certification/Maintain-Your-Credential.aspx</p>
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>How long until I receive the course confirmation details?</h1>
+                                        <p>Once your booking has been confirmed, you will receive an email which contains your e-Learning use-id, password, and payment receipts.  If you have purchased the any books, it will be shipped to your address within 2 to 3 weeks</p>
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>How do I sit for exams at home?</h1>
+                                        <p>You can take up your final certification exams at the comfort of your home using the ProctorU technology that is available 24/7. All what you require is a system that meets the following technical specifications:- http://www.proctoru.com/tech.php  </p>
+                                        <p>
+                                            When you are ready to take the exam, mail us on <a href="mailto:support@hsrsglobal.com">support@hsrsglobal.com</a> and provide us a date and time to book your exam. We just require a 10 days’ notice from the date you plan to take your exam.
+                                        </p>
+
+
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>How do I sit for exams at physical exam center?</h1>
+                                        <p>
+                                            These exams run only on certain dates at certain locations, and these places are pretty much booked in advance, sometimes there is an 8–12 weeks waiting list.  Please mail us on <a href="mailto:support@hsrsglobal.com">support@hsrsglobal.com</a>  to assist you.
+                                        </p>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade" id="review" aria-labelledby="review-tab">
+
+                                <ul class="tab_inner">
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Purpose</h1>
+                                        <p>Purpose of this procedure is to provide sufficient and accurate information to potential delegates so that they can make an informed decision to enroll to PRINCE2<sup>&reg;</sup> course. It provides</p>
+
+                                        <ul>
+                                            <li>the course aims, content and format </li>
+                                            <li>
+                                                eligibility criteria
+                                            </li>
+                                            <li>
+                                                pre-course work or reading requirements
+                                            </li>
+                                            <li>
+                                                Venue Details
+                                            </li>
+                                            <li>
+                                                expected time commitment
+                                            </li>
+                                            <li>
+                                                where the exam is not taken as part of the course, how candidates can access the exam
+                                            </li>
+                                            <li>
+                                                exam requirements and the relevant pass-marks
+                                            </li>
+                                        </ul>
+
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Course aims, content and format</h1>
+                                        <p>We provide pre-course reading, the official Managing Successful Projects with PRIENCE2<sup>&reg;</sup> manual, The Knowledge Academy courseware folder, official certificates and refreshments.</p>
+
+                                        <ul>
+                                            <li>Principles of PRINCE2<sup>&reg;</sup> </li>
+                                            <li>
+                                                Business Case Theme
+                                            </li>
+                                            <li>
+                                                Organisation Theme
+                                            </li>
+                                            <li>
+                                                Quality Theme
+                                            </li>
+                                            <li>
+                                                Plans Theme
+                                            </li>
+                                            <li>
+                                                Risk Theme
+                                            </li>
+                                            <li>
+                                                Change Theme
+                                            </li>
+                                            <li>
+                                                Progress Theme
+                                            </li>
+                                            <li>
+                                                Starting up a Project Process
+                                            </li>
+                                            <li>
+                                                Directing a Project Process
+                                            </li>
+                                            <li>
+                                                Initiating a Project Process
+                                            </li>
+                                            <li>
+                                                Controlling a Stage Process
+                                            </li>
+                                            <li>
+                                                Managing Product Delivery Process
+                                            </li>
+                                            <li>
+                                                Managing a Stage Boundary Process
+                                            </li>
+                                            <li>
+                                                Closing a Project Process
+                                            </li>
+                                            <li>
+                                                Tailoring PRINCE2<sup>&reg;</sup> to the project environment
+                                            </li>
+                                        </ul>
+
+                                        <p>
+                                            The format of the course would be as follows:<br>
+                                            PRINCE2<sup>&reg;</sup>  Foundation: 3 days that includes exams<br>
+                                            PRINCE2<sup>&reg;</sup>  Practitioner: 2 days that includes exams<br>
+                                            PRINCE2<sup>&reg;</sup>  Foundation + Practitioner: 5 days that includes both exams<br>
+                                        </p>
+                                        <br>
+                                        <p>
+                                            There are no eligibility criteria to enroll to Foundation. However delegates need to pass Foundation exams to be eligible at attend Practitioner exams.
+                                        </p>
+                                        <br>
+                                        <p>
+                                            If a delegate can’t take the exam as part of course, HSRS Global will arrange alternate arrangements with in 2 months of attendance.
+                                        </p>
+
+                                        <h2>PRINCE2<sup>&reg;</sup> Foundation</h2>
+
+                                        <p>
+                                            A 75 question multiple choice examination with a pass mark of 35 out of 70. The exam duration is 60 minutes.  It is a closed book exam and delegates are not allowed to use any reference material during the exam period. Success in this examination indicates that the candidate would be able to act as an informed member of a project management team using the PRINCE2®  method within a project environment supporting PRINCE2<sup>&reg;</sup> . Please note that success in the Foundation examination is a prerequisite for that candidate to move forward to the Practitioner examination.
+                                        </p>
+
+                                        <h2>PRINCE2<sup>&reg;</sup>: 2009 Practitioner Exam Format </h2>
+
+                                        <p>A 80 question Objective Test Examination with a pass mark of 44 out of 80 (55%). The exam duration is 150 minutes. This is an open book exam and delegates are allowed to use reference material “Managing Successful Projects with PRINCE2<sup>&reg;</sup> 2009 Edition”. Success in this examination indicates that the candidate could apply PRINCE2® to the running and managing of projects within an environment supporting PRINCE2<sup>&reg;</sup>. This is the top level of PRINCE2<sup>&reg;</sup>  qualification. </p>
+
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Eligibility criteria </h1>
+                                        <p>There are no eligibility criteria to sit for Foundation exams. However a delegate needs to pass Foundation exams or need to have PMP certificate to sit for Practitioner exams.</p><br>
+                                        <p>If a delegate attends Foundation and Practitioner class room type course and sits for exams one after another (normally 4 to 5 days course), the trainer or invigilator will access the Foundation exam results. If that delegate passes the exams, he/she will be allowed to sit for Practitioner exams</p><br>
+                                        <p>
+                                            For Re-Registration candidates must achieve a pass at the Practitioner examination and must also submit their candidate registration number of their expired Practitioner certification
+                                        </p>
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Pre-course work or reading requirements </h1>
+                                        <p>HSRS Global will email a case study of two pages to delegate as pre-course work. It is expected a delegate would take 2 hours to read the material. This case study will be used as part of the course material.</p>
+                                        <br>
+                                        <p>
+                                            If a delegate couldn’t prepare or understand the case study, the trainer will go through the details during the class room breaks, so that it wouldn’t impact other delegate who have read the material.
+                                        </p>
+                                    </li>
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Venue Details</h1>
+                                        <p>
+                                            The venue will be arranged to city central and convenient to public transport and cafes.
+                                        </p>
+                                    </li>
+
+
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Expected time commitment</h1>
+                                        <p>The course hours are from 9AM to 5PM and duration is 3 days for Foundation and 2 days for Practitioner, this includes attending respective exams.</p>
+                                        <br>
+                                        <p>
+                                            If exam is not taken as part of the course, HSRS Global will provide the required guidance for delegates to attend exams through APMG  web site http://www.apmg-international.com/public-bookings-PRINCE2<sup>&reg;</sup> .aspx
+                                        </p>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade" id="testimonial" aria-labelledby="testimonial-tab">
+
+                                <ul class="tab_inner">
+                                    <li>
+                                        <h1><i class="yell_dot"></i>Sample Testimonials from Delegates</h1>
+                                        <p>
+                                            Ravi was the PRINCE2<sup>&reg;</sup> (Foundation and Practitioner) training instructor for the training course I attended in March 2014. As a SME and consummate professional Ravi demonstrated his in depth knowledge of PRINC2<sup>&reg;</sup> and project management at a theoretical and also was able to illustrate well the training content at a well understood practical level. I would recommend Ravi to anyone planning to get trained and certified in PRINCE2<sup>&reg;</sup>. <br>
+                                            <a href="" class="pull-right">Chris Glinka, April 2014</a><br>
+                                        </p>
+                                    </li>
+
+                                    <li>
+
+                                        <p>
+                                            The training was good....although very intense! 
+                                            I particularly enjoyed our trainer Ravi and the extensive knowledge and experience that he has in project management. This added much value to my learning.
+                                            <br>
+                                            <a href="" class="pull-right">Natasha Clarke, Sep 2014</a><br>
+                                        </p>
+                                    </li>
+
+                                    <li>
+
+                                        <p>
+                                            Great Facilitator, open and answered questions well to allow participants to learn. NO Improvement needed.<br>
+                                            Number of participants were good to allow high interactions.)
+
+                                            <br>
+                                            <a href="" class="pull-right">Jared McGillicuddy, Sep 2014</a><br>
+                                        </p>
+                                    </li>
+
+                                    <li>
+                                        <p>
+                                            Liked the mostly the trainer and the learning strongly recommended.<br>
+                                            <a href="" class="pull-right">Mariao Hohaia, Sep 2014</a><br>
+                                        </p>
+                                    </li>
+
+                                    <li>
+                                        <p>
+                                            Ravi provided PRINCE2<sup>&reg;</sup> Foundation and Practitioner training to me in March 2014. Ravi's has extensive real-world experience in project management, in-depth theoretical knowledge of PRINCE2<sup>&reg;</sup> and is a good communicator. These skills enabled Ravi to present a large volume of complex information to myself and other students in an efficient way, enabling us to excel in the PRINCE2<sup>&reg;</sup> course. 
+                                            <br>
+                                            I recommend Ravi as a trainer in project management courses such as PRINCE2<sup>&reg;</sup>. <br>
+                                            <a href="" class="pull-right">Christian Lomax, May 27, 2014</a><br>
+                                        </p>
+                                    </li>
+
+
+                                    <li>
+                                        <p>
+                                            Ravi was comprehensive in his explanations and provided good examples<br>
+                                            <a href="" class="pull-right">Rachel Curry, March 2014</a><br>
+                                        </p>
+                                    </li>
+
+
+
+                                </ul>
+
+                            </div>
+
+
+
+                            <!-- <div role="tabpanel" class="tab-pane fade" id="blog" video aria-labelledby="blog-tab">
+
+                             <ul class="tab_inner">
+
+                             <li>
+                                 <h1><i class="yell_dot"></i>Is this course accredited?</h1>
+                                 <p>Yes, it is accredited byBCS (British Computer Society)</p>
+                               </li>
+
+
+                             <li>
+                                 <h1><i class="yell_dot"></i>What is the experience of the Instructor(s) delivering my course?</h1>
+                                 <p>All of our trainers are fully accredited and have over ten years of experience in PRINCE2 methodologies</p>
+                               </li>
+
+
+                               <li>
+                                 <h1><i class="yell_dot"></i>What do The Knowledge Academy provide me on the course?</h1>
+                                 <p>We provide pre-course reading, the official Managing Successful Projects with PRIENCE2 manual, The Knowledge Academy courseware folder, official certificates and refreshments.</p>
+                               </li>
+
+                               <li>
+                                 <h1><i class="yell_dot"></i>Does the course include exams?</h1>
+                                 <p>Yes, the course includes the both the PRINCE2 Foundation and Practitioner exams.</p>
+                               </li>
+
+                               </ul>
+
+                             </div> -->
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<script>
+    var strURL1 = window.location.href
+    var strTab1 = strURL1.substring(window.location.href.indexOf("#") + 1);
+    $(".Tab_main").focus();
+    if (strTab1 == "faq") {
+        $('#faqon').addClass('active');
+        $('#incon').removeClass('active');
+        $('#revon').removeClass('active');
+        $('#teston').removeClass('active');
+        $('#faq').addClass('active in');
+        $('#include').removeClass('active in');
+        $('#review').removeClass('active in');
+        $('#testimonial').removeClass('active in');
+    }
+    if (strTab1 == "overview") {
+        $('#faqon').removeClass('active');
+        $('#incon').removeClass('active');
+        $('#revon').addClass('active');
+        $('#teston').removeClass('active');
+        $('#faq').removeClass('active in');
+        $('#include').removeClass('active in');
+        $('#review').addClass('active in');
+        $('#testimonial').removeClass('active in');
+    }
+    if (strTab1 == "include") {
+        $('#faqon').removeClass('active');
+        $('#incon').addClass('active');
+        $('#revon').removeClass('active');
+        $('#teston').removeClass('active');
+        $('#faq').removeClass('active in');
+        $('#include').addClass('active in');
+        $('#review').removeClass('active in');
+        $('#testimonial').removeClass('active in');
+    }
+    if (strTab1 == "testimonial") {
+        $('#faqon').removeClass('active');
+        $('#incon').removeClass('active');
+        $('#revon').removeClass('active');
+        $('#teston').addClass('active');
+        $('#faq').removeClass('active in');
+        $('#include').removeClass('active in');
+        $('#review').removeClass('active in');
+        $('#testimonial').addClass('active in');
+    }
+</script>
+<script>
+    $(document).click(function () {
+        $("#toggle li").toggle("slide");
+    });
+
+    $(document).ready(function () {
+        $("div.bhoechie-tab-menu>div.list-group>a").click(function (e) {
+            e.preventDefault();
+            $(this).siblings('a.active').removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+            $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+        });
+    });
+
+
+    $(function () {
+
+        var $table = $('table').tablesorter({
+            theme: 'blue',
+            widgets: ["zebra", "filter"],
+            widgetOptions: {
+                // filter_anyMatch replaced! Instead use the filter_external option
+                // Set to use a jQuery selector (or jQuery object) pointing to the
+                // external filter (column specific or any match)
+                filter_external: '.search',
+                // add a default type search to the first name column
+                filter_defaultFilter: { 1: '~{query}' },
+                // include column filters
+                filter_columnFilters: true,
+                filter_placeholder: { search: 'Search...' },
+                filter_saveFilters: true,
+                filter_reset: '.reset'
+            }
+        });
+
+    });
+</script>

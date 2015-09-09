@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "Terms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="bread_main">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@System.Configuration.ConfigurationManager.AppSettings["Pathin"]">Home</a></li>
+            <li class="active">Terms & Conditions</li>
+        </ol>
+    </div>
+</div>
+
+
+<section class="Terms_form">
+    <div class="container">
+        <h1 class="terms_cond">TERMS AND CONDITIONS</h1>
+
+        <div class="tran_main">
+            <h1>COURSE REGISTRATION AND PAYMENT TERMS</h1>
+            <div class="terms_include">
+                <p>Payment details and terms can be found on each invoice. Payments may be made by electronic funds transfer, credit card or cheque.</p>
+                <p><span>FEES INCLUDE:</span> Morning and afternoon tea, and all course materials.</p>
+                <h2>Please pay before the course commences and before we send out printed materials</h2>
+                <ul>
+                    <li>Payment is required before attending the course unless agreed in writing.</li>
+                    <li>
+                        Your place is not confirmed on the course and an exam will not be ordered for you until we receive payment of the invoice.
+                    </li>
+                    <li>
+                        Printed material including manuals and pre-study guides will not be sent until payment or a purchase order number has been received. Exceptions must be agreed in writing.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="tran_main">
+            <h1>Payment methods</h1>
+            <div class="terms_include">
+                <p>We will process the booking and send you an email with an invoice. The email and invoice will contain payment details. Payments may be made by electronic funds transfer, credit card orcheque.</p>
+                <p>All payments must use the invoice number as a payment reference.</p>
+                @*<p>One option will be to pay by credit card and you will be provided with a link to a Project Laneways web page for this purpose.</p>
+
+                <ul>
+                    <li>If you want to pay by credit card, you may go to that web page and enter the invoice number and the amount and press the ”Pay Now” button.</li>
+                    <li>
+                        You will be redirected to the ANZ web site.
+                    </li>
+                    <li>
+                        You will need to enter your credit card details on the ANZ web site.
+                    </li>
+                    <li>
+                        The credit card transaction is managed by ANZ and we will not know your credit card details or store them.
+                    </li>
+                </ul>*@
+
+                @*<h3 class="term_note">NOTE: There will be an additional charge for payment by credit card. This will be 2.5% for American Express and 1% for Visa and Mastercard.</h3>*@
+
+                <p><span>CANCELLATIONS and TRANSFERS:</span> Written cancellations will be accepted and a full refund provided for up to twenty business days prior to the commencement of the course subject to all printed materials already received are returned. Transfers of bookings made less than ten business days before the course commencement will incur an administration fee of 10%. Transfers must be made and used within twelve months of initial course registration. After this twelve month period the course credit and course fee will be forfeited. An alternate participant for the course can be substituted at any time for no additional charge. Refund and/or transfer will not be provided for any participant who fails to attend the course.</p>
+
+                <p><span>Inability to complete a course once started:</span> We will make every effort to re-schedule you into another course to complete the remaining days. We cannot offer you a refund.</p>
+
+                <p>
+                    <span>INTERSTATE AND OVERSEAS TRAVEL:</span> Please note that final confirmation for a course will be made 2 weeks before the scheduled start date. If you are travelling to the course from interstate or overseas and are making advance travel and accommodation arrangements, please ensure all such arrangements are flexible. We can accept no responsibility for any arrangements made prior to final confirmation.
+                </p>
+
+                <p><span>TIMES: </span> Course commence at normal local  business hours and it will run for 8 hours each day. Registration is done 30 minutes prior to start on the first day.
+The details will be sent after registration</p>
+
+                <p><span>REGISTRATION:</span> Registration is from 8.30 am to 9.00 on the first day.</p>
+
+                <p>
+                    <span>COMPLAINTS:</span> if you have any complaints or suggestions, please send an email to <a href="mailto:info@hsrsglobal.com">info@hsrsglobal.com</a> and subject as “complaints or suggestions
+                </p>
+
+                <p>
+                    <span>DISCLAIMER:</span> All information regarding course dates, presenters and content is accurate as at  time of posting. We do our utmost to ensure that courses are conducted as  advertised. HSRS Global
+                    reserves the right however to vary course dates, course presenters, terms and conditions or to cancel courses without prejudice if circumstances so warrant. In such a situation participants will be informed of  the change prior to the course and will be entitled to cancel if they so choose without penalty.
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="tran_main">
+            <h1>Exam results</h1>
+            <div class="terms_include">
+                <p>
+                    You will be informed of your results of the Foundation exam within one working day of taking the exam.
+                </p>
+
+                <h2>Certificates & Registration on the APMG UK web site</h2>
+                <ul>
+                    <li>It can take up to 12 weeks for the certificates to be awarded and delivered to you upon successful completion of the exam.</li>
+                    <li>
+                        You will be listed on the Successful Candidate Register on the UK based APMG web site once you have successfully completed exam.
+                    </li>
+                    <li>
+                        This process can take up to six weeks.
+                    </li>
+                </ul>
+
+                <h2>If you are unsuccessful with the exam</h2>
+                See the <a href="@System.Configuration.ConfigurationManager.AppSettings["Pathin"]/prince2exam">HSRS Exam Gaurantee</a>
+            </div>
+        </div>
+
+
+        <div class="tran_main">
+            <h1>Venue changes</h1>
+            <div class="terms_include">
+                <p>Occasionally we are forced to make a change to the training venue after we have notified you of the location. In this event, we will recontact you by your preferred method to inform you of the change.</p>
+                <h2>Pricing</h2>
+                <p>For the latest pricing on our public courses please look at the Course Summary and Pricing page.</p>
+                <ul>
+                    <li>All Prices are shown without local taxes. Delegates need to pay local taxes </li>
+                    <li>
+                        Discount may be available for group bookings.
+                    </li>
+                </ul>
+                <h2>Accreditation</h2>
+                <p>This is an APMG accredited course and the exam standards are maintained by APMG. Candidates will be asked to sign a form stating that they agree with the terms and conditions of the examination and certification. The full text can be found here. In summary it says:</p>
+
+                <ul>
+                    <li>You will be required to provide photo ID</li>
+                    <li>
+                        You will be awarded a Practitioner certificate only if you pass the Foundation and Practitioner exams
+                    </li>
+                    <li>
+                        PRINCE2 Practitioners are required to re-register between 3 and 5 years after originally gaining the Practitioner qualification. The re-registration exam is similar to the Practitioner exam but is a shorter version.
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+</section> 
