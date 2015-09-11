@@ -1,0 +1,285 @@
+﻿<div id="referNav">
+    <section class="Training">
+        <div class="Traning_org">
+            <div class="container">
+                <!-- <div class="Org_logo">
+                <img src="images/prince2.jpg">
+                </div> -->
+                <div class="Org_Main">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-9">
+                            <div class="lgt_side_tab">
+                                <h1><img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/prince2_icon.jpg" height="35" />PMP<sup>&reg;</sup>Training - PMP<sup>&reg;</sup>Certification - PMP<sup>&reg;</sup>Course</h1>
+                                <ul>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        4 day PMP training by experienced Australian instructors
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Free Mobile App and Online Course:
+
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Free 40  PMI Approved contact hours provided before you can appear in a classroom training
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Free assistance in filling your PMI Application form
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Free courseware as soon as you book
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Exam pass Guarantee: Free course Resit until you pass
+                                    </li>
+                                    <!-- <li><img src="images/favimg.png" height="13"/>
+                                    Free presentation from MD, CIO or recruiters on how to be an effective project manager</li> -->
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Approved PMI R.E.P. provider ID: 2053
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Partnership with world renowned group, VMEdu Inc
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="rgt_side_tab">
+                                <h1>PMP<sup>&reg;</sup>Certification Details</h1>
+                                <ul>
+                                    <li><a href="#Tab_view1" class="included3"><i class="in_arrow"></i>PMP<sup>&reg;</sup>What’s included?</a></li>
+                                    <li><a href="#Tab_view1" class="review3"><i class="in_arrow"></i>PMP<sup>&reg;</sup>Course Overview</a></li>
+                                    <li><a href="#Tab_view1" class="faq3"><i class="in_arrow"></i>PMP<sup>&reg;</sup>FAQ</a></li>
+                                    <li><a href="#Tab_view1" class="exam3"><i class="in_arrow"></i>PMP<sup>&reg;</sup>Exam Pass Guarantee</a></li>
+                                    <li><a href="#Tab_view1" class="testimonial3"><i class="in_arrow"></i>PMP<sup>&reg;</sup>Testimonials</a></li>
+                                </ul>
+
+                                <a href="#myModal5" role="button" data-toggle="modal">
+                                    <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/side-banner.jpg" style="width: 100%;">
+                                </a>
+                                <!-- Modal HTML -->
+                                <div id="myModal5" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Stakeholder Management Course</h4>
+                                            </div>
+                                            <div class="modal-body stake_hold">
+                                                <p>
+                                                    Stakeholders must be managed throughout a project so that their ideas and concerns are taken into consideration, thus  they understand the project decisions taken and accept them more readily and they will be project supporters instead of project adversaries
+                                                </p><p>
+                                                    HSRS Global will train you on how to manage stakeholders expectations for successfull delivery of projects.  This training will help you to identify your stakeholders, develop appropriate  management strategies to engage your stakeholders, meet their needs, and continously monitor and improve your relationship with stakeholders.
+                                                </p><p>
+                                                    This will be two hours training and this will be done after completion of Practitioner or Foundation exams.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Course_table" id="tableview3">
+        <div class="Table_main">
+            <div class="container">
+                <div class="table_page">
+                    <div class="table-responsive">
+                        <table id="hsrs_table3" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="first-name filter-select" data-placeholder="SELECT A COURSE">COURSE</th>
+                                    <th class="filter-select filter-onlyAvail" data-placeholder="SELECT A DATE">Date</th>
+                                    <th class="filter-select" data-placeholder="SELECT A LOCATION">LOCATION</th>
+                                    <th data-value="<30">DURATION</th>
+                                    <th data-placeholder="Select a filter">PRICE</th>
+                                    <th class="filter-select filter-onlyAvail">BOOK ONLINE</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tcourse3">
+                                @if (ViewData["PMP"] != null)
+                                {
+
+                                    foreach (System.Data.DataRow dr in (ViewData["PMP"] as System.Data.DataTable).Rows)
+                                    {
+                                        <tr>
+                                            <td style="text-align:left">@dr["Name"]</td>
+                                            <td>@dr["Date"]</td>
+                                            <td>
+                                                @dr["Location"]
+                                            </td>
+                                            <td>
+                                                @dr["Duration"] Days
+                                            </td>
+                                            <td>
+                                                $@dr["Price"]
+                                            </td>
+                                            <td>
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/contactus" class="enquire">Enquire</a>
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/course/@dr["slug"]/@dr["sluglocation"]" class="bok_online">Book Online</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Tab_view" id="Tab_view1">
+        <section class="faq" id="faq6">
+            <section class="overview" id="overview6">
+                <div class="Tab_main">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="detail_tab">
+                                    <ul id="myTab" class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active first3_act"><a href="#included3" role="tab" id="included3-tab" data-toggle="tab" aria-controls="included3">What’s included?</a></li>
+                                        <li role="presentation" class="second3_act"><a href="#review3" role="tab" id="review3-tab" data-toggle="tab" aria-controls="review3">Course Overview</a></li>
+                                        <li role="presentation" class="thrid3_act"><a href="#faq3" id="faq3-tab" role="tab" data-toggle="tab" aria-controls="faq3" aria-expanded="true">FAQ</a></li>
+                                        <li role="presentation" class="fourth3_act"><a href="#exam3" role="tab" id="testimonial3-tab" data-toggle="tab" aria-controls="exam3">Exam Pass Guarantee</a></li>
+                                        <li role="presentation" class="fifth3_act"><a href="#testimonial3" role="tab" id="testimonial3-tab" data-toggle="tab" aria-controls="testimonial3">Testimonials</a></li>
+
+                                    </ul>
+                                    <div id="myTabContent" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade in active first3_act" id="included3" aria-labelledby="included3-tab">
+                                            <ul class="tab_inner">
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Besides the classroom training, a 60-day access to online PMP exam prep course is also provided, which includes</h1>
+                                                    <ul>
+                                                        <li>4 Full Simulated Tests (200 Qs, 4 hrs)</li>
+                                                        <li>
+                                                            58 Engaging Videos (4+ hrs)
+                                                        </li>
+                                                        <li>
+                                                            Downloadable Study Guides
+                                                        </li>
+                                                        <li>Terms and Concepts</li>
+                                                        <li>Chapter Tests (1000+ Qs)</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade in second3_act" id="review3" aria-labelledby="review3-tab">
+                                            <ul class="tab_inner">
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Case Studies and Role Plays</h1>
+                                                    <p>
+                                                        HSRS Global classroom training method includes everything that you will need to pass the PMP® exam – no additional courseware is required. The HSRS Global courseware includes a comprehensive workbook, questions, process chart and other tools – which
+                                                        help prepare students to pass the exam on the day after the class ends. The focus in our training is not solely to prepare for the PMP® exam – but to help students understand the PMBOK framework better through real life case studies and role plays.
+                                                        So, each chapter is taught through case studies and role-plays, where students interact with each other and with the faculty to learn how to apply project management concepts in real-life situations. So, other than passing the PMP<sup>&reg;</sup> exam,
+                                                        students gain valuable insights into the PMBOK framework and how to apply the theory to better manage projects.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Free Mobile App and Online Course</h1>
+                                                    <p>
+                                                        HSRS Global complements its classroom training with free 2 months access to a very high quality online course and fun phone
+                                                        apps which further help student learn the concepts and prepare for the PMP<sup>&reg;</sup> exam. You can join a free 2 day demo of HSRS Global online which will provide
+                                                        you a better understanding of the high quality HSRS Global online course and phone apps. This online course and phone apps include very high quality videos,
+                                                        more than 800 chapter test questions, flash-cards for terms and concepts, 4 full length 4 hour simulated PMP<sup>&reg;</sup> exams which simulate your final PMP<sup>&reg;</sup> Exam experience.
+                                                    </p><br>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Leading PMI<sup>&reg;</sup> R.E.P.</h1>
+                                                    <p>
+                                                        HSRS Global is one of the biggest PMI<sup>&reg;</sup> R.E.P.s globally. HSRS Global teaches more classes in more locations than any other PMP<sup>&reg;</sup> exam prep boot camp provider in the US/Canada.
+                                                        Training with the leaders assures you of the "PROVEN QUALITY" training at locations convenient to you. Why train with small, unknown players when you have the option to train
+                                                        with the leader with assured training methodology, best faculty and high quality online course and phone apps?
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Free PMI<sup>&reg;</sup> Approved PDUs/Contact Hours</h1>
+                                                    <p>
+                                                        HSRS Global courses provide you 40 PMI Approved Contact hours which is required by PMI before you can appear in a classroom training. Moreover,
+                                                        HSRS Global provides 3 free courses with 38 Free PDUs to all its classroom students – this helps students get the continuing education required to maintain your PMP<sup>&reg;</sup> exam status.
+                                                        HSRS Global also provides you with free assistance in filling your PMI Application form, and provides valuable exam taking tips.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Excellent Study Environment</h1>
+                                                    <p>
+                                                        Classroom programs are conducted in a high-class environment, with all study aids. Our courses include coffee and tea
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div role="tabpIs this course panel" class="tab-pane fade thrid3_act" id="faq3" aria-labelledby="faq3-tab">
+                                            <ul class="tab_inner">
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Are you approved and what is your R.E.P provider number?</h1>
+                                                    <p>Yes, HSRS Global is in partnership with VMEdu Incorporated which has been reviewed and approved as a provider of project management training by the Project Management Institute (PMI<sup>&reg;</sup>). Our R.E.P. Provider ID number is 2053</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>What is the Exam Pass Guarantee?</h1>
+                                                    <p>
+                                                        Our exam pass guarantee gives you confidence that we will support your learning until you pass your PMP® exam. We guarantee that you will pass your PMP<sup>&reg;</sup> exam after completing our PMP<sup>&reg;</sup> Class.
+                                                        All we require is for you to take the exam within 30 days of completing the class. Attend all class days and complete all class assignments, including your PMP<sup>&reg;</sup> practice exams.
+                                                        If you do not pass the exam after the 1st attempt, we will allow you to attend the class again free of charge. Should you fail the exam on your 2nd attempt, you will be eligible to enrol in the class again, free of charge.
+                                                        PMP<sup>&reg;</sup> examination results must be verified to confirm re-enrolment and is subject to availability.
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Are there any pre-requisites for the PMP<sup>&reg;</sup> Certification examination?</h1>
+                                                    <p>To apply for the PMP exam, you need to have either:</p><br />
+                                                    <p>      A secondary degree (high school diploma, associate’s degree, or the global equivalent) with at least five years of project management experience, with 7,500 hours leading and directing projects and 35 hours of project management education. </p>
+                                                    <br /><p>OR</p><br />
+                                                    <p>      A four-year degree (bachelor’s degree or the global equivalent) and at least three years of project management experience, with 4,500 hours leading and directing 	projects and 35 hours of project management education.</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Does the course fee include exams?</h1>
+                                                    <p>The course fee does not include the exam as you need to apply directly to PMI to book and take your exam at a Prometric testing center</p>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane fade fourth3_act" id="exam3" aria-labelledby="fourth3-tab">
+                                            <ul class="tab_inner">
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>What is the Exam Pass Guarantee?</h1>
+                                                    <p>
+                                                        Our exam pass guarantee gives you confidence that we will support your learning until you pass your PRINCE2 Agile<sup>&reg;</sup> exam.
+                                                        We guarantee that you will pass your exam after completing our Class. If you do not pass the exam after the 1st attempt, we will allow you to attend the class again free of charge.
+                                                        Should you fail the exam on your 2nd attempt, you will be eligible to enrol in the class again, free of charge.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade fifth3_act" id="testimonial3" aria-labelledby="testimonial3-tab">
+
+                                            <p>Since HSRS Global is partnering with VMEdu incorporated for PMP and PM Study is a brand of VMEdu incorporated. All testimonials are at this site <a href="http://www.pmstudy.com/feedback_class.asp">http://www.pmstudy.com/feedback_class.asp</a></p>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+</div>
+<div class="free_advice">
+    <div class="container">
+        <h1>Book online or call <span>1300 79 29 07</span> for FREE advice or to confirm your place</h1>
+        <!--  <h2>Browse our list of upcoming courses above :</h2> -->
+        <p><a href="#tableview">Please note course availability is limited*</a></p>
+    </div>
+</div>

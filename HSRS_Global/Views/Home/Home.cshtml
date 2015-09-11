@@ -1,4 +1,9 @@
 ﻿@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
     ViewBag.MetaDescription = "Prince2, the best project management training course offered by Globally accredited No 1 training organization HSRS Global which is situated in Australia.";
     ViewBag.MetaKeywords = "pmp certification, project management institute, project management professional, project management course, prince2 certification, project management training, prince2 practitioner, prince2 training, prince2 project management, prince2 course, prince2 methodology, prince2 exam, prince2 qualification, project management courses online, prince2 exam questions, prince2 training melbourne";
     ViewBag.Canonical = "http://www.hsrsglobal.com.au/";
@@ -27,16 +32,52 @@
         z-index: 999999;
     }
 </style>
+<style>
+    .tab-content.hsr .tab-pane {
+        display: none;
+    }
+
+        .tab-content.hsr .tab-pane.active {
+            display: block;
+        }
+
+    .main-conts .container-fluid {
+        padding: 0;
+    }
+
+    ul#leftTabs {
+        text-align: center;
+    }
+
+        ul#leftTabs li {
+            display: inline-block;
+            padding-top: 10px;
+        }
+
+    .tab-content12 .nav > li > a {
+        background: #EBEBEB;
+        padding: 10px 136px;
+    }
+
+    .tab-content12 .nav > li.active > a {
+        color: #fff;
+        background-color: #1d3456;
+        border: 1px solid #1d3456;
+        border-bottom-color: transparent;
+        border-radius: 0;
+    }
+</style>
+
 <section class="slider">
     <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/HSRS_new_banner.jpg" class="slider_img" />
     @*<div class="container">
-        <div class="top_slider">
-            <h1>FREE FREE FREE!!! </h1>
-            <p class="fount">PRINCE2® Foundation and Practitioner Online access with July classroom training</p>
-            <p class="fount_price" style="text-align: center;background-color: white;">Value of $600</p>
-            @*<a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2onlinetraining"><input type="submit" class="prince_buy" value="Book Now"></a>
-        </div>
-    </div>*@
+            <div class="top_slider">
+                <h1>FREE FREE FREE!!! </h1>
+                <p class="fount">PRINCE2® Foundation and Practitioner Online access with July classroom training</p>
+                <p class="fount_price" style="text-align: center;background-color: white;">Value of $600</p>
+                @*<a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2onlinetraining"><input type="submit" class="prince_buy" value="Book Now"></a>
+            </div>
+        </div>*@
     <div class="container">
         <div class="top_slider" style="font-size: 15px;">
             <p class="fount">Globally Accredited Project Management Training in Melbourne</p>
@@ -49,923 +90,133 @@
 </div>
 <section class="book_online">
     <div class="Orange_bg">
-
         <div class="container" style="position:relative;">
             @*<div class="training_location">
                 <img src="images/banner_03.jpg">
                 </div>*@
-                @*<div class="training_location" style="top:-145px">
-                <div class="train_loc_inner">
-                    <ul>
-                        <li><h1>TRAINING LOCATIONS</h1></li>
-                        <li><a href="#tableview">PRINCE2<sup>&reg;</sup>Training Melbourne</a></li>
-                        <li><a href="#tableview">PRINCE2<sup>&reg;</sup>Training Sydney</a></li>
-                        @*<li><a href="#tableview">PRINCE2<sup>&reg;</sup>Training Canberra</a></li>
-                            <li><a href="#tableview">PRINCE2<sup>&reg;</sup>Training Brisbane</a></li>
-                    </ul>
+            @*<div class="training_location" style="top:-145px">
+                    <div class="train_loc_inner">
+                        <ul>
+                            <li><h1>TRAINING LOCATIONS</h1></li>
+                            <li><a href="#tableview">PRINCE2<sup>&reg;</sup>Training Melbourne</a></li>
+                            <li><a href="#tableview">PRINCE2<sup>&reg;</sup>Training Sydney</a></li>
+                            @*<li><a href="#tableview">PRINCE2<sup>&reg;</sup>Training Canberra</a></li>
+                                <li><a href="#tableview">PRINCE2<sup>&reg;</sup>Training Brisbane</a></li>
+                        </ul>
 
-                </div>
-            </div>*@
-                <div class="row">
-                    <div class="col-md-8 col-sm-8">
-
-                        <div class="col-md-4">
-                            <div class="high_inact">
-                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/highlyinteractive">Highly Interactive using Tablets</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="high_inact">
-                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2exam">Exam Resit Guarantee</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="high_inact">
-                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2presentation">Presentation from Senior Managers</a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="hsrs">
-                            <img src="images/banner-gif.gif">
-                        </div>
-                        @*<div class="newsletter">
-                    <p>Please provide your email address to receive more details</p>
-                    <input type="text" placeholder="Enter Your Email ID" class="email_text">
-                    <input type="submit" value="SUBMIT" class="email_submit">
-                    </div>*@
-                    </div>
-                    @*<div class="col-md-4 col-sm-4">
-                    <div class="newsletter">
-                        <p>Please provide your email address to receive more details</p>
-                        <input type="text" id ="emailnews" placeholder="Enter Your Email ID" class="email_text">
-                        <input type="button" id="submitnews" value="SUBMIT" class="email_submit">
                     </div>
                 </div>*@
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <div class="col-md-4">
+                        <div class="high_inact">
+                            <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/highlyinteractive">Highly Interactive using Tablets</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="high_inact">
+                            <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2exam">Exam Resit Guarantee</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="high_inact">
+                            <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2presentation">Presentation from Senior Managers</a>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="hsrs">
+                        <img src="images/hsrs-gif.gif">
+                    </div>
+                    @*<div class="newsletter">
+                        <p>Please provide your email address to receive more details</p>
+                        <input type="text" placeholder="Enter Your Email ID" class="email_text">
+                        <input type="submit" value="SUBMIT" class="email_submit">
+                        </div>*@
+                </div>
+                @*<div class="col-md-4 col-sm-4">
+                        <div class="newsletter">
+                            <p>Please provide your email address to receive more details</p>
+                            <input type="text" id ="emailnews" placeholder="Enter Your Email ID" class="email_text">
+                            <input type="button" id="submitnews" value="SUBMIT" class="email_submit">
+                        </div>
+                    </div>*@
             </div>
+        </div>
     </div>
-
 
 </section>
 
-<div id="referNav">
-    <section class="Training">
-        <div class="Traning_org">
-            <div class="container">
-                <!-- <div class="Org_logo">
-                <img src="images/prince2.jpg">
-                </div> -->
-                <div class="Org_Main">
-                    <div class="row">
-                        <div class="col-md-9 col-sm-9">
-                            <div class="lgt_side_tab">
-                                <h1><img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/prince2_icon.jpg" height="35" />PRINCE2<sup>&reg;</sup>Training - PRINCE2<sup>&reg;</sup>Certification - PRINCE2<sup>&reg;</sup> Course</h1>
-                                <ul>
-                                    <li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        World class tutors who understand Australian business
-                                    </li>
-                                    <li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        All qualification comes with an <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2exam">exam guarantee</a>
-                                        
-                                    </li>
-                                    <li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        Highly interactive & tailored to each individual using tablets
-                                    </li>
-                                    <li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        Free templates & course resources
-                                    </li>
-                                    <li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        Free 3 months guidance and assistance after passing, to achieve your goals
-                                    </li>
-                                    @*<li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        Free short term course on  Introduction to effective Stakeholder Management
-                                    </li>*@
-                                    <li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        Australian owned & operated
-                                    </li>
-                                    <!-- <li><img src="images/favimg.png" height="13"/>
-                                    Free presentation from MD, CIO or recruiters on how to be an effective project manager</li> -->
-                                    <li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        No hidden extra costs One price covers it all
-                                    </li>
-                                    <li>
-                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
-                                        <span>Free presentation from senior managers such as CIO, General Managers or recruiters on how to be </span><span style="padding-left:26px">an effective project manager</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-3">
-                            <div class="rgt_side_tab">
-                                <h1>PRINCE2<sup>&reg;</sup>Certification Details</h1>
-                                <ul>
-                                    <li><a href="#Tab_view" class="faq"><i class="in_arrow"></i>PRINCE2<sup>&reg;</sup> FAQ's</a></li>
-                                    <li><a href="#Tab_view" class="overview"><i class="in_arrow"></i>PRINCE2<sup>&reg;</sup> Overview</a></li>
-                                    <li><a href="#Tab_view" class="include"><i class="in_arrow"></i>PRINCE2<sup>&reg;</sup> What's included?</a></li>
-                                    <li><a href="#Tab_view" class="testimonal"><i class="in_arrow"></i>PRINCE2<sup>&reg;</sup> Testimonials</a></li>
-                                </ul>
-                                <!--<ul>
-                                <li><a href=""><i class="in_arrow"></i>PRINCE2<sup>&reg;</sup>Download Centre</a></li>
-                                 <li><a href=""><i class="in_arrow"></i>PRINCE2 Process Model</a></li>
-                                <li><a href=""><i class="in_arrow"></i>PRINCE2 Templates</a></li>
-                                <li><a href=""><i class="in_arrow"></i>PRINCE2<sup>&reg;</sup>for Business</a></li>
-                                <li class="veiw_all"><a href="">View all resources</a></li>
-                                </ul>-->
-                                <a href="#myModal5" role="button" data-toggle="modal">
-                                    <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/side-banner.jpg" style="width: 100%;">
-                                </a>
 
-                                <!-- Modal HTML -->
-                                <div id="myModal5" class="modal fade">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title">Stakeholder Management Course</h4>
-                                            </div>
-                                            <div class="modal-body stake_hold">
-                                                <p>
-                                                    Stakeholders must be managed throughout a project so that their ideas and concerns are taken into consideration, thus  they understand the project decisions taken and accept them more readily and they will be project supporters instead of project adversaries
-                                                </p><p>
-                                                    HSRS Global will train you on how to manage stakeholders expectations for successfull delivery of projects.  This training will help you to identify your stakeholders, develop appropriate  management strategies to engage your stakeholders, meet their needs, and continously monitor and improve your relationship with stakeholders.
-                                                </p><p>
-                                                    This will be two hours training and this will be done after completion of Practitioner or Foundation exams.
-                                                </p>
 
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="main-conts ">
+    <div class="container-fluid">
+        <div class="tab-content12">
+            <ul class="nav " id="leftTabs">
+                <li class="active">
+                    <a href="#a_tab" data-toggle="tab">
+                        <span></span>PRINCE2
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#b_tab" data-toggle="tab">
+                        <span></span>PRINCE2 Agile
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#c_tab" data-toggle="tab">
+                        <span></span>PMP
+                    </a>
+                </li>
+            </ul>
         </div>
-    </section>
 
-    <section class="Course_table" id="tableview">
-        <div class="Table_main">
-            <div class="container">
+        <div class="tab-content hsr">
 
-                <div class="table_page">
-                    <div class="table-responsive">
-                        <table id="hsrs_table" cellspacing="0" width="100%">
-
-                            <thead>
-
-                                <tr>
-
-                                    <th class="first-name filter-select" data-placeholder="SELECT A COURSE">COURSE</th>
-                                    <th class="filter-select filter-onlyAvail" data-placeholder="SELECT A DATE">Date</th>
-                                    <th class="filter-select" data-placeholder="SELECT A LOCATION">LOCATION</th>
-                                    <th data-value="<30">DURATION</th>
-                                    <th data-placeholder="Select a filter">PRICE</th>
-                                    <th class="filter-select filter-onlyAvail">BOOK ONLINE</th>
-
-                                </tr>
-                            </thead>
-
-                            
-
-                            <tbody id="tcourse">
-                                @if (ViewData["AllcouData"] != null)
-                                {
-
-                                    foreach (System.Data.DataRow dr in (ViewData["AllcouData"] as System.Data.DataTable).Rows)
-                                    {
-                                        <tr>
-                                            <td style="text-align:left">@dr["Name"]</td>
-                                            <td>@dr["Date"]</td>
-                                            <td>
-                                                @dr["Location"]
-                                            </td>
-                                            <td>
-                                                @dr["Duration"] Days
-                                            </td>
-                                            <td>
-                                                $@dr["Price"]
-                                            </td>
-                                            <td>
-                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/contactus" class="enquire">Enquire</a>
-                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/course/@dr["slug"]/@dr["sluglocation"]" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-                                    }
-                                }
-                                @*<tr>
-                                      <td>Melbourne</td>
-                                      <td>Melbourne</td>
-                                                                      <td>
-                                                                          Melbourne
-                                                                      </td>
-                                                                      <td>
-                                                                          5 days
-                                                                      </td>
-                                                                      <td>
-                                                                          $1995
-                                                                      </td>
-                                                                      <td>
-                                                                          <a href="" class="enquire">Enquire</a>
-                                                                          <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                                                      </td>
-                                    </tr>*@
-                                    @*<tr>
-                                            <td>
-                                                PRINCE2® Foundation and Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                18-12-2014
-                                            </td>
-                                            <td>
-                                                Melbourne
-                                            </td>
-                                            <td>
-                                                5 days
-                                            </td>
-                                            <td>
-                                                $1995
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation
-                                            </td>
-                                            <td class="date_color">
-                                                22-12-2014
-                                            </td>
-                                            <td>
-                                                Melbourne
-                                            </td>
-                                            <td>
-                                                12
-                                            </td>
-                                            <td>
-                                                $2.99
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                24-12-2014
-                                            </td>
-                                            <td>
-                                                Melbourne
-                                            </td>
-                                            <td>
-                                                51
-                                            </td>
-                                            <td>
-                                                $42.29
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation and Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                24-12-2014
-                                            </td>
-                                            <td>
-                                                Sydney
-                                            </td>
-                                            <td>
-                                                28
-                                            </td>
-                                            <td>
-                                                $9.99
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation
-                                            </td>
-                                            <td class="date_color">
-                                                28-12-2014
-                                            </td>
-                                            <td>
-                                                Sydney
-                                            </td>
-                                            <td>
-                                                33
-                                            </td>
-                                            <td>
-                                                $19.99
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                27-12-2014
-                                            </td>
-                                            <td>
-                                                Sydney
-                                            </td>
-                                            <td>
-                                                18
-                                            </td>
-                                            <td>
-                                                $15.89
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation and Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                30-12-2014
-                                            </td>
-                                            <td>
-                                                Canberra
-                                            </td>
-                                            <td>
-                                                45
-                                            </td>
-                                            <td>
-                                                $153.19
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation
-                                            </td>
-                                            <td class="date_color">
-                                                10-12-2014
-                                            </td>
-                                            <td>
-                                                Canberra
-                                            </td>
-                                            <td>
-                                                13
-                                            </td>
-                                            <td>
-                                                $5.29
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                14-1-2015
-                                            </td>
-                                            <td>
-                                                Canberra
-                                            </td>
-                                            <td>
-                                                24
-                                            </td>
-                                            <td>
-                                                $14.19
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation and Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                24-12-2014
-                                            </td>
-                                            <td>
-                                                Perth
-                                            </td>
-                                            <td>
-                                                28
-                                            </td>
-                                            <td>
-                                                $9.99
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation
-                                            </td>
-                                            <td class="date_color">
-                                                28-12-2014
-                                            </td>
-                                            <td>
-                                                Perth
-                                            </td>
-                                            <td>
-                                                33
-                                            </td>
-                                            <td>
-                                                $19.99
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                27-12-2014
-                                            </td>
-                                            <td>
-                                                Perth
-                                            </td>
-                                            <td>
-                                                18
-                                            </td>
-                                            <td>
-                                                $15.89
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation and Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                24-12-2014
-                                            </td>
-                                            <td>
-                                                Brisbane
-                                            </td>
-                                            <td>
-                                                28
-                                            </td>
-                                            <td>
-                                                $9.99
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Foundation
-                                            </td>
-                                            <td class="date_color">
-                                                28-12-2014
-                                            </td>
-                                            <td>
-                                                Brisbane
-                                            </td>
-                                            <td>
-                                                33
-                                            </td>
-                                            <td>
-                                                $19.99
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                PRINCE2® Practitioner
-                                            </td>
-                                            <td class="date_color">
-                                                27-12-2014
-                                            </td>
-                                            <td>
-                                                Brisbane
-                                            </td>
-                                            <td>
-                                                18
-                                            </td>
-                                            <td>
-                                                $15.89
-                                            </td>
-                                            <td>
-                                                <a href="" class="enquire">Enquire</a>
-                                                <a href="../../../Bookonline/Index" class="bok_online">Book Online</a>
-                                            </td>
-                                        </tr>*@
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
+            <div class="tab-pane active" id="a_tab">
+                @Html.Partial("~/Views/Home/_PRINCE2.cshtml");
+               
                 </div>
-            </div>
-        </section>
-
-        <section class="Tab_view" id="Tab_view">
-            <section class="faq" id="faq">
-                <section class="overview" id="overview">
-                    <div class="Tab_main">
-                        <div class="container">
-
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="detail_tab">
-                                        <ul id="myTab" class="nav nav-tabs" role="tablist">
-                                            <li role="presentation" class="active first_act"><a href="#include" role="tab" id="include-tab" data-toggle="tab" aria-controls="include">What's included?</a></li>
-                                            <li role="presentation" class="second_act"><a href="#faq1" id="faq-tab" role="tab" data-toggle="tab" aria-controls="faq" aria-expanded="true">FAQ's</a></li>
-                                            <li role="presentation" class="third_act"><a href="#review" role="tab" id="review-tab" data-toggle="tab" aria-controls="review">Course Review</a></li>
-                                            <li role="presentation" class="fourth_act"><a href="#testimonial" role="tab" id="testimonial-tab" data-toggle="tab" aria-controls="testimonial">Testimonials</a></li>
-                                            <!-- <li role="presentation"><a href="#blog" role="tab" id="blog-tab" data-toggle="tab" aria-controls="blog">Blog</a></li> -->
-                                        </ul>
-                                        <div id="myTabContent" class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade in active first_act" id="include" aria-labelledby="include-tab">
-
-                                                <ul class="tab_inner">
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>What’s included with PRINCE2<sup>&reg;</sup>classroom?</h1>
-                                                        <ul>
-                                                            <li>All accompanying course material</li>
-                                                            <li>
-                                                                The official “Managing Successful Projects using PRINCE2<sup>&reg;</sup> 2009 Edition” manual
-                                                            </li>
-                                                            <li>
-                                                                Exams
-                                                            </li>
-                                                            <li>
-                                                                Certificates
-                                                            </li>
-                                                            <li>
-                                                                Refreshments
-                                                            </li>
-                                                            <li>
-                                                                Free 3 months guidance and assistance after passing, to achieve your goals
-                                                            </li>
-                                                            <li style="text-transform: none;">
-                                                                Free Templates and Processes
-                                                            </li>
-                                                            @*<li>
-                                                                    Free access to Online material
-                                                                </li>*@
-                                                            <li>
-                                                                137 chapter-end quizzes
-                                                            </li>
-                                                            <li>
-                                                                Free presentation from senior manager &/or recruiters on how to be an effective project manager
-
-
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
-                                            <div role="tabpIs this course panel" class="tab-pane fade second_act" id="faq1" aria-labelledby="faq-tab">
-
-                                                <ul class="tab_inner">
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>What is PRINCE2<sup>&reg;</sup>?</h1>
-                                                        <p>PRINCE2<sup>&reg;</sup> (PRojects IN Controlled Environments 2nd Version) is a structured project management method for running projects and it is adaptable to any size or type of project or any industry. It is widely used in over 50 countries.</p>
-                                                        <h2>What are the PRINCE2<sup>&reg;</sup> qualifications and what will they teach me?</h2>
-                                                        <p>The PRINCE2<sup>&reg;</sup>Foundation qualification will teach you the PRINCE2<sup>&reg;</sup>principles, themes, and processes and when qualified you will be in a position to understand and discuss on project management methodology and influence project management team for the success of a project.</p><br>
-                                                        <p>
-                                                            The PRINCE2<sup>&reg;</sup>Practitioner qualification will teach you to apply PRINCE2<sup>&reg;</sup>methodology to run and manage a project. Once qualified you will be able to apply and tailor PRINCE2<sup>&reg;</sup> in a project scenario situation. You will have a sound knowledge of principles, themes and processes, and also have the skills to tailor the methodology to suit the project needs and deliver.
-                                                        </p><br>
-                                                        <p>All PRINCE2<sup>&reg;</sup>Practitioners should be re-registered within 3-5 calendar years of their original certification to maintain their Registered Practitioner status. </p><br>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>What is the structure of PRINCE2<sup>&reg;</sup>Foundation exams?</h1>
-                                                        <p>A 75 question multiple choice examination with a pass mark of 35 out of 70. The exam duration is 60 minutes.  It is a closed book exam and delegates are not allowed to use any reference material during the exam period. Success in this examination indicates that the candidate would be able to act as an informed member of a project management team using the PRINCE2<sup>&reg;</sup>  method within a project environment supporting PRINCE2<sup>&reg;</sup> . Please note that success in the Foundation examination is a prerequisite for that candidate to move forward to the Practitioner examination.</p>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>What is the structure of PRINCE2<sup>&reg;</sup>Practitioner exams?</h1>
-                                                        <p>A 80 question Objective Test Examination with a pass mark of 44 out of 80 (55%). The exam duration is 150 minutes. This is an open book exam and delegates are allowed to use reference material “Managing Successful Projects with PRINCE2<sup>&reg;</sup> 2009 Edition”. Success in this examination indicates that the candidate could apply PRINCE2<sup>&reg;</sup> to the running and managing of projects within an environment supporting PRINCE2<sup>&reg;</sup>. This is the top level of PRINCE2<sup>&reg;</sup> qualification</p>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>Are there any prerequisites before taking a PRINCE2<sup>&reg;</sup>examination?</h1>
-                                                        <p>There are no eligibility criteria to sit for Foundation exams. However a delegate needs to pass Foundation exams or Project Management Professional (PMP)<sup>&reg;</sup> to sit for Practitioner exams.</p><br>
-                                                        <p>If a delegate attends Foundation and Practitioner class room type course and sits for exams one after another, the trainer or invigilator will access the Foundation exam results. If that delegate passes the exams, he/she will be allowed to sit for Practitioner exams</p><br>
-                                                        <p>For Re-Registration candidates must achieve a pass at the Practitioner examination and must also submit their candidate registration number of their expired Practitioner certification</p>
-
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>How I can report my PDUs to PMI </h1>
-                                                        <p>You will need to complete and submit a PMP Professional Development Activities Reporting Form to PMI. This can be obtained from by visiting www.pmi.org/Certification/Maintain-Your-Credential.aspx</p>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>How long until I receive the course confirmation details?</h1>
-                                                        <p>Once your booking has been confirmed, you will receive an email which contains your e-Learning use-id, password, and payment receipts.  If you have purchased any books, it will be shipped to your address within 2 to 3 weeks</p>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>How do I sit for exams at home?</h1>
-                                                        <p>You can take up your final certification exams at the comfort of your home using the ProctorU technology that is available 24/7. All what you require is a system that meets the following technical specifications:- http://www.proctoru.com/tech.php  </p>
-                                                        <p>
-                                                            When you are ready to take the exam, mail us on <a href="mailto:support@hsrsglobal.com">support@hsrsglobal.com</a> and provide us a date and time to book your exam. we just require 10 working days notice from the date you plan to take your exam, and it may cost additional fee for this service
-                                                        </p>
-
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>How do I sit for exams at physical exam center?</h1>
-                                                        <p>These exams run only on certain dates at certain locations, and these places are pretty much booked in advance, sometimes there is an 8–12 weeks waiting list.  Please mail us on <a href="mailto:support@hsrsglobal.com">support@hsrsglobal.com</a>  to assist you.</p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane fade third_act" id="review" aria-labelledby="review-tab">
-                                                <ul class="tab_inner">
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>Purpose</h1>
-                                                        <p>Purpose of this procedure is to provide sufficient and accurate information to potential delegates so that they can make an informed decision to enroll to PRINCE2<sup>&reg;</sup> course. It provides</p>
-                                                        <ul>
-                                                            <li>the course aims, content and format </li>
-                                                            <li>
-                                                                eligibility criteria
-                                                            </li>
-                                                            <li>
-                                                                pre-course work or reading requirements
-                                                            </li>
-                                                            <li>
-                                                                Venue Details
-                                                            </li>
-                                                            <li>
-                                                                expected time commitment
-                                                            </li>
-                                                            <li>
-                                                                where the exam is not taken as part of the course, how candidates can access the exam
-                                                            </li>
-                                                            <li>
-                                                                exam requirements and the relevant pass-marks
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>Course aims, content and format</h1>
-                                                        <p>We provide pre-course reading, the official Managing Successful Projects with PRINCE2® manual, HSRS Global courseware folder, official certificates and refreshments.</p>
-                                                        <ul>
-                                                            <li>Principles of PRINCE2<sup>&reg;</sup> </li>
-                                                            <li>
-                                                                Business Case Theme
-                                                            </li>
-                                                            <li>
-                                                                Organisation Theme
-                                                            </li>
-                                                            <li>
-                                                                Quality Theme
-                                                            </li>
-                                                            <li>
-                                                                Plans Theme
-                                                            </li>
-                                                            <li>
-                                                                Risk Theme
-                                                            </li>
-                                                            <li>
-                                                                Change Theme
-                                                            </li>
-                                                            <li>
-                                                                Progress Theme
-                                                            </li>
-                                                            <li>
-                                                                Starting up a Project Process
-                                                            </li>
-                                                            <li>
-                                                                Directing a Project Process
-                                                            </li>
-                                                            <li>
-                                                                Initiating a Project Process
-                                                            </li>
-                                                            <li>
-                                                                Controlling a Stage Process
-                                                            </li>
-                                                            <li>
-                                                                Managing Product Delivery Process
-                                                            </li>
-                                                            <li>
-                                                                Managing a Stage Boundary Process
-                                                            </li>
-                                                            <li>
-                                                                Closing a Project Process
-                                                            </li>
-                                                            <li>
-                                                                Tailoring PRINCE2<sup>&reg;</sup> to the project environment
-                                                            </li>
-                                                        </ul>
-                                                        @*<p>
-                                                                The format of the course would be as follows:<br>
-                                                                PRINCE2<sup>&reg;</sup>  Foundation: 3 days that includes exams<br>
-                                                                PRINCE2<sup>&reg;</sup>  Practitioner: 2 days that includes exams<br>
-                                                                PRINCE2<sup>&reg;</sup>  Foundation + Practitioner: 5 days that includes both exams<br>
-                                                            </p>*@
-                                                        <br>
-                                                        <p>
-                                                            There are no eligibility criteria to enroll to Foundation. However delegates need to pass Foundation exams to be eligible at attend Practitioner exams.
-                                                        </p>
-                                                        <br>
-                                                        <p>
-                                                            If a delegate can’t take the exam as part of course, HSRS Global will arrange alternate arrangements with in 2 months of attendance.
-                                                        </p>
-                                                        <h2>PRINCE2<sup>&reg;</sup> Foundation</h2>
-                                                        <p>
-                                                            A 75 question multiple choice examination with a pass mark of 35 out of 70. The exam duration is 60 minutes.  It is a closed book exam and delegates are not allowed to use any reference material during the exam period. Success in this examination indicates that the candidate would be able to act as an informed member of a project management team using the PRINCE2<sup>&reg;</sup>  method within a project environment supporting PRINCE2<sup>&reg;</sup> . Please note that success in the Foundation examination is a prerequisite for that candidate to move forward to the Practitioner examination.
-                                                        </p>
-                                                        <h2>PRINCE2<sup>&reg;</sup>: 2009 Practitioner Exam Format </h2>
-                                                        <p>A 80 question Objective Test Examination with a pass mark of 44 out of 80 (55%). The exam duration is 150 minutes. This is an open book exam and delegates are allowed to use reference material “Managing Successful Projects with PRINCE2<sup>&reg;</sup> 2009 Edition”. Success in this examination indicates that the candidate could apply PRINCE2<sup>&reg;</sup> to the running and managing of projects within an environment supporting PRINCE2<sup>&reg;</sup>. This is the top level of PRINCE2<sup>&reg;</sup>  qualification. </p>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>Eligibility criteria </h1>
-                                                        <p>There are no eligibility criteria to sit for Foundation exams. However a delegate needs to pass Foundation exams or need to have PMP certificate to sit for Practitioner exams.</p><br>
-                                                        <p>If a delegate attends Foundation and Practitioner class room type course and sits for exams one after another, the trainer or invigilator will access the Foundation exam results. If that delegate passes the exams, he/she will be allowed to sit for Practitioner exams</p><br>
-                                                        <p>
-                                                            For Re-Registration candidates must achieve a pass at the Practitioner examination and must also submit their candidate registration number of their expired Practitioner certification
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>Pre-course work or reading requirements </h1>
-                                                        <p>HSRS Global will email a case study of two pages to delegate as pre-course work. It is expected a delegate would take 2 hours to read the material. This case study will be used as part of the course material.</p>
-                                                        <br>
-                                                        <p>
-                                                            If a delegate couldn’t prepare or understand the case study, the trainer will go through the details during the class room breaks, so that it wouldn’t impact other delegate who have read the material.
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>Venue Details</h1>
-                                                        <p>
-                                                            The venue will be arranged to city central and convenient to public transport and cafes.
-                                                        </p>
-                                                    </li>
-
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>Expected time commitment</h1>
-                                                        <p>The course hours are from 9 AM to 5 PM, and duration is specified in the enroll table, this includes attending respective exams</p>
-                                                        <br>
-                                                        <p>
-                                                            If exam is not taken as part of the course, HSRS Global will provide the required guidance for delegates to attend exams through APMG  web site http://www.apmg-international.com/public-bookings-PRINCE2<sup>&reg;</sup> .aspx
-                                                        </p>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane fade fourth_act" id="testimonial" aria-labelledby="testimonial-tab">
-
-                                                <ul class="tab_inner">
-                                                    <li>
-                                                        <h1><i class="yell_dot"></i>Sample Testimonials from Delegates</h1>
-                                                        <p>
-                                                            Ravi was the PRINCE2<sup>&reg;</sup> (Foundation and Practitioner) training instructor for the training course I attended in March 2014. As a SME and consummate professional Ravi demonstrated his in depth knowledge of PRINC2<sup>&reg;</sup>and project management at a theoretical and also was able to illustrate well the training content at a well understood practical level. I would recommend Ravi to anyone planning to get trained and certified in PRINCE2<sup>&reg;</sup>. <br>
-                                                            <a href="" class="pull-right">Chris Glinka, April 2014</a><br>
-                                                        </p>
-                                                    </li>
-                                                    <li>
-
-                                                        <p>
-                                                            The training was good....although very intense! 
-                                                            I particularly enjoyed our trainer Ravi and the extensive knowledge and experience that he has in project management. This added much value to my learning.
-                                                            <br>
-                                                            <a href="" class="pull-right">Natasha Clarke, Sep 2014</a><br>
-                                                        </p>
-                                                    </li>
-                                                    <li>
-
-                                                        <p>
-                                                            Great Facilitator, open and answered questions well to allow participants to learn. NO Improvement needed.<br>
-                                                            Number of participants were good to allow high interactions.)
-
-                                                            <br>
-                                                            <a href="" class="pull-right">Jared McGillicuddy, Sep 2014</a><br>
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p>
-                                                            Liked the mostly the trainer and the learning strongly recommended.<br>
-                                                            <a href="" class="pull-right">Mariao Hohaia, Sep 2014</a><br>
-                                                        </p>
-                                                    </li>
-                                                    <li>
-                                                        <p>
-                                                            Ravi provided PRINCE2<sup>&reg;</sup> Foundation and Practitioner training to me in March 2014. Ravi's has extensive real-world experience in project management, in-depth theoretical knowledge of PRINCE2<sup>&reg;</sup>and is a good communicator. These skills enabled Ravi to present a large volume of complex information to myself and other students in an efficient way, enabling us to excel in the PRINCE2 course. 
-                                                            <br>
-                                                            I recommend Ravi as a trainer in project management courses such as PRINCE2<sup>&reg;</sup>. <br>
-                                                            <a href="" class="pull-right">Christian Lomax, May 27, 2014</a><br>
-                                                        </p>
-                                                    </li>
-
-                                                    <li>
-                                                        <p>
-                                                            Ravi was comprehensive in his explanations and provided good examples<br>
-                                                            <a href="" class="pull-right">Rachel Curry, March 2014</a><br>
-                                                        </p>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
+                    <div class="tab-pane" id="b_tab">
+                      @Html.Partial("~/Views/Home/_PRINCE2_Agile.cshtml");
                     </div>
-                </section>
-            </section>
-        </section>
-    </div>
-    <div class="free_advice">
-        <div class="container">
-            <h1>Book online or call <span>1300 79 29 07</span> for FREE advice or to confirm your place</h1>
-            <!--  <h2>Browse our list of upcoming courses above :</h2> -->
-            <p><a href="#tableview">Please note course availability is limited*</a></p>
-        </div>
-    </div>
-    <script>
-        var cname = $("#emailnews").val();
-        function ValidateEmail(email) {
-            var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-            return expr.test(email);
-        };
-        $("#submitnews").click(function () {
-            var email = $("#emailnews").val();
-            if (email == "" || email == null) {
-                alert("Please Enter Your Email address ");
+                    <div class="tab-pane " id="c_tab">
+                      @Html.Partial("~/Views/Home/_PMP.cshtml");
+                    </div>
+               
+            </div>
+<script>
+    var cname = $("#emailnews").val();
+    function ValidateEmail(email) {
+        var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return expr.test(email);
+    };
+    $("#submitnews").click(function () {
+        var email = $("#emailnews").val();
+        if (email == "" || email == null) {
+            alert("Please Enter Your Email address ");
+            $("#emailnews").focus();
+            return false;
+        }
+        else if (email != "" || email != null) {
+            if (!ValidateEmail(email)) {
+                alert("Invalid email address.");
                 $("#emailnews").focus();
                 return false;
             }
-            else if (email != "" || email != null) {
-                if (!ValidateEmail(email)) {
-                    alert("Invalid email address.");
-                    $("#emailnews").focus();
-                    return false;
-                }
-            }
-            $('#Intro').css("display", "");
-            $('#Inner').css("display", "");
-            $.ajax({
-                url: "@System.Configuration.ConfigurationManager.AppSettings["Path"]/Home/newsletter/" + email, success: function (result) {
+        }
+        $('#Intro').css("display", "");
+        $('#Inner').css("display", "");
+        $.ajax({
+            url: "@System.Configuration.ConfigurationManager.AppSettings["Path"]/Home/newsletter/" + email, success: function (result) {
 
-                    setTimeout(function () {
-                        alert(result);
-                        $("#emailnews").val("");
-                        $('#Intro').css("display", "none");
-                        $('#Inner').css("display", "none");
-                    }, 2000);
-                }
-            });
+                setTimeout(function () {
+                    alert(result);
+                    $("#emailnews").val("");
+                    $('#Intro').css("display", "none");
+                    $('#Inner').css("display", "none");
+                }, 2000);
+            }
         });
-    </script>
+    });
+</script>

@@ -21,6 +21,8 @@ namespace HSRS_Global.Controllers
             course.Action = "Select";
             ds = course.coursemaster(course);
             ViewData["AllcouData"] = ds.Tables[0];
+            ViewData["Agile"] = ds.Tables[1];
+            ViewData["PMP"] = ds.Tables[2];            
             return View("~/Views/Home/Home.cshtml");
         }
 

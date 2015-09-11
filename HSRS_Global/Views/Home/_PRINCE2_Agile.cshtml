@@ -1,0 +1,468 @@
+﻿<div id="referNav">
+    <section class="Training">
+        <div class="Traning_org">
+            <div class="container">
+                <!-- <div class="Org_logo">
+                <img src="images/prince2.jpg">
+                </div> -->
+                <div class="Org_Main">
+                    <div class="row">
+                        <div class="col-md-9 col-sm-9">
+                            <div class="lgt_side_tab">
+                                <h1><img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/prince2_icon.jpg" height="35" />PRINCE2 Agile<sup>&reg;</sup>Training - Certification - Course</h1>
+                                <ul>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        3 day PRINCE2 Agile training by experienced Australian instructors
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Free courseware as soon as you book
+
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Exam pass Guarantee: Free course Resit until you pass
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        The official “PRINCE2 Agile” Manual from Axelos
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Exams
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Certificates
+                                    </li>
+                                    <!-- <li><img src="images/favimg.png" height="13"/>
+                                    Free presentation from MD, CIO or recruiters on how to be an effective project manager</li> -->
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Refreshments
+                                    </li>
+                                    <li>
+                                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/favimg.png" height="13" />
+                                        Free Two Sample Exam Papers
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <div class="rgt_side_tab">
+                                <h1>PRINCE2 Agile<sup>&reg;</sup>Certification Details</h1>
+                                <ul>
+                                    <li><a href="#Tab_view2" class="review2"><i class="in_arrow"></i>PRINCE2 Agile<sup>&reg;</sup>Overview</a></li>
+                                    <li><a href="#Tab_view2" class="delivery2"><i class="in_arrow"></i>PRINCE2 Agile<sup>&reg;</sup>Course Delivery</a></li>
+                                    <li><a href="#Tab_view2" class="benefits2"><i class="in_arrow"></i>PRINCE2 Agile<sup>&reg;</sup>Benefits</a></li>
+                                    <li><a href="#Tab_view2" class="faq2"><i class="in_arrow"></i>PRINCE2 Agile<sup>&reg;</sup>FAQ</a></li>
+                                    <li><a href="#Tab_view2" class="exam2"><i class="in_arrow"></i>PRINCE2 Agile<sup>&reg;</sup>Exam Pass Guarantee</a></li>
+                                    <li><a href="#Tab_view2" class="testimonial2"><i class="in_arrow"></i>PRINCE2 Agile<sup>&reg;</sup>Testimonials</a></li>
+                                </ul>
+
+                                <a href="#myModal5" role="button" data-toggle="modal">
+                                    <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/side-banner.jpg" style="width: 100%;">
+                                </a>
+                                <!-- Modal HTML -->
+                                <div id="myModal5" class="modal fade">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title">Stakeholder Management Course</h4>
+                                            </div>
+                                            <div class="modal-body stake_hold">
+                                                <p>
+                                                    Stakeholders must be managed throughout a project so that their ideas and concerns are taken into consideration, thus  they understand the project decisions taken and accept them more readily and they will be project supporters instead of project adversaries
+                                                </p><p>
+                                                    HSRS Global will train you on how to manage stakeholders expectations for successfull delivery of projects.  This training will help you to identify your stakeholders, develop appropriate  management strategies to engage your stakeholders, meet their needs, and continously monitor and improve your relationship with stakeholders.
+                                                </p><p>
+                                                    This will be two hours training and this will be done after completion of Practitioner or Foundation exams.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Course_table" id="tableview">
+        <div class="Table_main2">
+            <div class="container">
+                <div class="table_page">
+                    <div class="table-responsive">
+                        <table id="hsrs_table1" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="first-name filter-select" data-placeholder="SELECT A COURSE">COURSE</th>
+                                    <th class="filter-select filter-onlyAvail" data-placeholder="SELECT A DATE">Date</th>
+                                    <th class="filter-select" data-placeholder="SELECT A LOCATION">LOCATION</th>
+                                    <th data-value="<30">DURATION</th>
+                                    <th data-placeholder="Select a filter">PRICE</th>
+                                    <th class="filter-select filter-onlyAvail">BOOK ONLINE</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tcourse">
+                                @if (ViewData["Agile"] != null)
+                                {
+
+                                    foreach (System.Data.DataRow dr in (ViewData["Agile"] as System.Data.DataTable).Rows)
+                                    {
+                                        <tr>
+                                            <td style="text-align:left">@dr["Name"]</td>
+                                            <td>@dr["Date"]</td>
+                                            <td>
+                                                @dr["Location"]
+                                            </td>
+                                            <td>
+                                                @dr["Duration"] Days
+                                            </td>
+                                            <td>
+                                                $@dr["Price"]
+                                            </td>
+                                            <td>
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/contactus" class="enquire">Enquire</a>
+                                                <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/course/@dr["slug"]/@dr["sluglocation"]" class="bok_online">Book Online</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Tab_view" id="Tab_view2">
+        <section class="faq" id="faq5">
+            <section class="overview" id="overview5">
+                <div class="Tab_main">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="detail_tab">
+                                    <ul id="myTab" class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active first2_act"><a href="#review2" role="tab" id="review2-tab" data-toggle="tab" aria-controls="review2">Overview</a></li>
+                                        <li role="presentation" class="second2_act"><a href="#delivery2" id="delivery2-tab" role="tab" data-toggle="tab" aria-controls="delivery2">Course Delivery</a></li>
+                                        <li role="presentation" class="third2_act"><a href="#benefits2" role="tab" id="benefits2-tab" data-toggle="tab" aria-controls="benefits2">Benefits</a></li>
+                                        <li role="presentation" class="fourth2_act"><a href="#faq2" id="faq2-tab" role="tab" data-toggle="tab" aria-controls="faq2" aria-expanded="true">FAQ</a></li>
+                                        <li role="presentation" class="fifth2_act"><a href="#exam2" role="tab" id="exam2-tab" data-toggle="tab" aria-controls="exam2">Exam Pass Guarantee</a></li>
+                                        <li role="presentation" class="sixth2_act"><a href="#testimonial2" role="tab" id="testimonial2-tab" data-toggle="tab" aria-controls="testimonial2">Testimonials</a></li>
+
+                                    </ul>
+                                    <div id="myTabContent" class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade second2_act" id="delivery2" aria-labelledby="delivery2-tab">
+                                            <ul class="tab_inner">
+
+                                                <li>
+                                                    <p>All workshops may be conducted onsite or at our premises, with highly experienced certified trainers providing group and/or individual instruction. Training is provided through hands-on learning, relevant exercises and the provision of a participant handbook. Our participants receive email support throughout the study process and are also entitled to complementary telephone consultation/advice within 60 days of workshop completion.</p>
+                                                    <br /> <h1><i class="yell_dot"></i>Workshop Content Summary</h1>
+
+                                                    <ul>
+
+                                                        <li>
+
+                                                            Blending PRINCE2 and agile together
+                                                        </li>
+                                                        <li>
+                                                            Agile Frameworks
+                                                        </li>
+                                                        <li>
+                                                            Agile Behaviours, concepts and techniques
+                                                        </li>
+                                                        <li>
+                                                            The Hexagon (incl. MoSCoW prioritisation)
+                                                        </li>
+                                                        <li>
+                                                            Starting Up a Project, Initiating a Project (including the Business Case)
+                                                        </li>
+
+                                                        <li>
+                                                            Cynefin Framework
+                                                        </li>
+                                                        <li>
+                                                            Requirements and User Stories
+                                                        </li>
+                                                        <li>
+                                                            Organisation
+                                                        </li>
+                                                        <li>
+                                                            Servant Leadership
+                                                        </li>
+                                                        <li>
+                                                            The Agilometer and the Risk Theme
+                                                        </li>
+                                                        <li>
+                                                            Managing Product Delivery
+                                                        </li>
+                                                        <li>
+                                                            Quality
+                                                        </li>
+                                                        <li>
+                                                            Controlling a Stage, Managing a Stage Boundary (Frequent Releases and Retrospectives)
+                                                        </li>
+                                                        <li>
+                                                            Directing a Project and Closing a Project
+                                                        </li>
+                                                        <li>
+                                                            Management Products
+                                                        </li>
+                                                        <li>
+                                                            Communication (Incl. workshops)
+                                                        </li>
+                                                        <li>
+                                                            Scrum
+                                                        </li>
+                                                        <li>
+                                                            Kanban
+                                                        </li>
+                                                        <li>
+                                                            Lean Start-up
+                                                        </li>
+                                                        <li>
+                                                            Health Check, Transitioning, PM tips
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div role="tabpIs this course panel" class="tab-pane fade fourth2_act" id="faq2" aria-labelledby="faq2-tab">
+                                            <ul class="tab_inner">
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Why would I want to take PRINCE2 Agile when there are other Agile project management qualifications available?</h1>
+                                                    <p>PRINCE2 Agile is the only Agile project framework covering the full spectrum of Agile, including SCRUM, Kanban, Cynefin and Lean Startup. Unlike other Agile PM methodologies, PRINCE2 Agile explains how they work and how to incorporate them into a project environment, i.e. APMG AgilePM references SCRUM and covers where but not how it should be applied.</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Isn’t Agile an IT delivery tool? I don’t work in IT so I don’t have interest in Agile.</h1>
+                                                    <p>Whilst Agile is mainly associated with IT delivery, but it is essentially about creating a way to provide new products and deliver new services to customers, and this is fundamental to most organizations. PRINCE2 Agile can be applied to any project, of any size, in any industry sector, it is certainly not purely IT or software focused.</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Does PRINCE2 Agile have any real worth?</h1>
+                                                    <p>Absolutely, PRINCE2 Agile has been created specifically in response to demand from the best practice community; and secondly, it fills a vital knowledge gap – affording those certified with the insight and key knowledge of the world’s two most popular project management techniques.</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Why should I take the PRINCE2 Agile qualification if no one ever knows I’m qualified?</h1>
+                                                    <p>Once you become certified, you’ll be asked if you want your name to appear on AXELOS’ Successful Candidate Register – accessible by employers and potential employers alike and ensuring that your knowledge of this vital new qualification is clear for all to see.</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Won’t the cost of taking the new qualification be prohibitively expensive?</h1>
+                                                    <p>No. The cost of PRINCE2 Agile training and examinations will be relative to other invaluable project management guidance methods. Plus, the ongoing value to an individual or organization will more than offset any initial costs associated with attaining the qualification.</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>PRINCE2 Agile doesn’t relate to the wider PPM portfolio – so why do I need it?</h1>
+                                                    <p>Simple. Because PRINCE2 Agile is being offered as an extension qualification for those who already have a good understanding of PRINCE2, it relates directly to programme  managers with MSP who will need to understand not only how the programme relates to the projects, but also how projects relate to the delivery mechanism.</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Won’t this new qualification make the existing PRINCE2 qualification redundant?</h1>
+                                                    <p>Not at all. If anything, the introduction of PRINCE2 Agile makes PRINCE2 more vital than ever before. Because PRINCE2 Agile is aimed at supporting PRINCE2 practitioners working in an Agile environment, prior knowledge of PRINCE2 is required; thus the PRINCE2 Practitioner certification is required to be able to take this new qualification.</p>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>There are already Agile project management methodologies available, why do I need PRINCE2 Agile?</h1>
+                                                    <p> For existing PRINCE2 practitioners, PRINCE2 Agile is the most applicable route to build on their existing knowledge, as they’re already familiar with the terminology, such as role names, product names and process names</p>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade in active first2_act" id="review2" aria-labelledby="review2-tab">
+                                            <ul class="tab_inner">
+                                                <li>
+                                                    <p>
+                                                        PRINCE2 Agile is the world’s most complete project management solution, combining the flexibility and responsiveness of Agile with the clearly defined
+                                                        framework of PRINCE2<sup>&reg;</sup>. PRINCE2 Agile is a new extension module tailored for forward-thinking organizations and individuals already benefiting from
+                                                        PRINCE2 that would like further guidance on how to apply Agile methods to the world’s most recognized project management method.
+                                                    </p>
+                                                    <br>
+                                                    <p>
+                                                        PRINCE2 Agile’s four principle areas will look at four key things:
+                                                    </p>
+                                                    <ul>
+                                                        <li>Lean and flow based approaches (e.g. Lean start up and Kanban)</li>
+                                                        <li>
+                                                            Project focused (e.g. DSDM, Feature Driven Development)
+                                                        </li>
+                                                        <li>
+                                                            Standalone techniques (e.g. user stories)
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Examination Format</h1>
+                                                    <ul>
+                                                        <li>Objective testing</li>
+                                                        <li>
+                                                            50 questions each worth one mark
+                                                        </li>
+                                                        <li>
+                                                            30 marks or more required to pass out of 50 questions - 60% pass mark
+                                                        </li>
+                                                        <li>
+                                                            Two-and-a-half hours’ (150 minutes) duration, no additional reading time
+                                                        </li>
+                                                        <li>
+                                                            Open book exam (official PRINCE2 Agile guide only)
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Prerequisites</h1>
+                                                    <p>You must hold a current PRINCE2 Practitioner qualification to sit for PRINCE2 Agile exams</p><br>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade sixth2_act" id="testimonial2" aria-labelledby="testimonial2-tab">
+                                            <ul class="tab_inner">
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>Sample Testimonials from Delegates</h1>
+                                                    <p>
+                                                        The training was good....although very intense!  I particularly enjoyed our trainer Ravi and the extensive knowledge and experience that he has in project management. This added much value to my learning.  <br>
+                                                        <a href="" class="pull-right">Natasha Clarke, Sep 2014</a><br>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        Great Facilitator, open and answered questions well to allow participants to learn. NO Improvement needed.<br>
+                                                        Number of participants were good to allow high interactions.)
+
+                                                        <br>
+                                                        <a href="" class="pull-right">Jared McGillicuddy, Sep 2014</a><br>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        Liked the mostly the trainer and the learning strongly recommended.
+
+                                                        <br>
+                                                        <a href="" class="pull-right">Mariao Hohaia, Sep 2014</a><br>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        Ravi was comprehensive in his explanations and provided good examples<br>
+                                                        <a href="" class="pull-right">Rachel Curry, March 2014</a><br>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div role="tabpIs this course panel" class="tab-pane fade fifth2_act" id="exam2" aria-labelledby="exam2-tab">
+                                            <ul class="tab_inner">
+                                                <li>
+                                                    <h1><i class="yell_dot"></i>What is the Exam Pass Guarantee?</h1>
+                                                    <p>
+                                                        Our exam pass guarantee gives you confidence that we will support your learning until you pass your PRINCE2 Agile® exam. We guarantee that you will pass your exam after completing our Class. If you do not pass the exam after the 1st attempt, we will allow you to attend the class again free of charge. Should you fail the exam on your 2nd attempt, you will be eligible to enrol in the class again, free of charge.
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane fade third2_act" id="benefits2" aria-labelledby="benefits2-tab">
+                                            <ul class="tab_inner content-benefits">
+                                                <li>
+
+                                                    <h1><i class="yell_dot"></i>INDIVIDUALS -<span class="benefits-content">MANAGE YOUR CAREER WITH PRINCE2 AGILE</span></h1>
+                                                    <br />
+                                                    <ul>
+                                                        <li>Improved position in the job market and career progression within project and programme management by being at the forefront of Practitioners achieving the new PRINCE2 Agile qualification</li>
+                                                        <li>
+                                                            Recognized globally with an international qualification which demonstrates your ability to apply best practice approaches to managing any and every kind of project – no matter the size or scale
+                                                        </li>
+                                                        <li>
+                                                            A broad understanding of all of the key Agile concepts and how these blend seamlessly into the PRINCE2 methodology
+                                                        </li>
+                                                        <li>
+                                                            Flexibility to work with an ever-evolving solution or, alternatively, one that is clearly defined in detail
+                                                        </li>
+                                                        <li>
+                                                            Completing your PRINCE2 Agile qualification will earn you 15 continuing professional development (CPD) points towards a professional membership, maintaining your PRINCE2 qualification other than through re-sitting the exam
+                                                        </li>
+                                                        <li>
+                                                            All AXELOS certified candidates will be asked if they want their names to appear on AXELOS’ Successful Candidate Register. Employers or potential employers will be able to verify an individual’s certification via the Successful Candidates Register on AXELOS.com
+                                                            <br />
+                                                            <br />
+                                                            <h4>This course is designed for:</h4>
+
+                                                            <ul>
+
+                                                                <li>
+
+                                                                    Project Managers,
+                                                                </li>
+                                                                <li>
+                                                                    Programme Managers,
+                                                                </li>
+                                                                <li>
+                                                                    Project Administrators,
+                                                                </li>
+                                                                <li>
+                                                                    Project Co-ordinators,
+                                                                </li>
+                                                                <li>
+                                                                    Project Management Support Service Manager.
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <h1><i class="yell_dot"></i> ORGANIZATIONS -<span class="benefits-content"> IMPROVE YOUR BUSINESS WITH PRINCE2 AGILE SUCCESFULLY MANAGE YOUR</span></h1>
+                                                    <ul>
+                                                        <li>Improved position in the job market and career progression within project and programme management by being at the forefront of Practitioners achieving the new PRINCE2 Agile qualification</li>
+                                                        <li>
+                                                            Recognized globally with an international qualification which demonstrates your ability to apply best practice approaches to managing any and every kind of project – no matter the size or scale
+                                                        </li>
+                                                        <li>
+                                                            A broad understanding of all of the key Agile concepts and how these blend seamlessly into the PRINCE2 methodology
+                                                        </li>
+                                                        <li>
+                                                            Completing your PRINCE2 Agile qualification will earn you 15 continuing professional development (CPD) points towards a professional membership, maintaining your PRINCE2 qualification other than through re-sitting the exam
+                                                        </li>
+                                                        <li>
+                                                            All AXELOS certified candidates will be asked if they want their names to appear on AXELOS’ Successful Candidate Register. Employers or potential employers will be able to verify an individual’s certification via the Successful Candidates Register on AXELOS.com
+                                                        </li>
+                                                        <li>
+                                                            Agile methods allow organizations to realize the benefits of products and potentially an earlier return on investment while products are being developed and improved
+                                                        </li>
+                                                        <li>
+                                                            Improved communication by encouraging the use of common terminology across PRINCE2 and Agile disciplines
+                                                        </li>
+                                                        <li>
+                                                            Develop a clear definition of how Agile can govern a project’s delivery, whilst PRINCE2 governs projects as a whole
+                                                        </li>
+                                                        <li>
+                                                            The perfect combination of complete control, allied with true flexibility – by adopting the tried, tested and, crucially, proven processes of PRINCE2 with Agile, you literally ensure that your organization adopts the best of both worlds
+                                                        </li>
+                                                        <li>
+                                                            Seamless integration: PRINCE2 Agile will complement PMBOK and APM Body of Knowledge in exactly the same way that PRINCE2 does currently. It will also be of interest for programme managers with MSP® who will need to understand how projects relate to the delivery mechanism
+                                                        </li>
+                                                        <li>
+                                                            The most up-to-date and relevant view of Agile project management methodologies. Other methodologies, such as APMG AgilePM, could be said to be 5 years behind the times as it does not reference the ‘flow-based’ working featured in Kanban.
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+</div>
+<div class="free_advice">
+    <div class="container">
+        <h1>Book online or call <span>1300 79 29 07</span> for FREE advice or to confirm your place</h1>
+        <!--  <h2>Browse our list of upcoming courses above :</h2> -->
+        <p><a href="#tableview">Please note course availability is limited*</a></p>
+    </div>
+</div>

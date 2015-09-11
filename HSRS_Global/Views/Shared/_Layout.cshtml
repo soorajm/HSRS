@@ -45,15 +45,22 @@
     <header>
         <div class="container" >
             <div class="row">
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-3">
                     <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]"><img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/HSRS-logo.png" alt="Logo" class="logo" /></a>
                 </div>
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-3">
                     <div class="Org_logo">
                         <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/prince2.jpg">
+            
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-3 col-sm-3">
+                    <div class="Org_logo">
+                      
+                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/price2-agile.jpg">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
                     <div class="lft_assistance">
                         <h1>NEED ASSISTANCE ?</h1>
                         <a href="mailto:info@hsrsglobal.com">info@hsrsglobal.com</a>
@@ -212,6 +219,7 @@
         var strURL = window.location.href
         var strTab = strURL.substring(window.location.href.indexOf("#") + 1);
         $(".Tab_main").focus();
+      
         if (strTab == "faq") {
             $('.second_act').addClass('active in');
             $('.first_act').removeClass('active in');
@@ -268,6 +276,94 @@
 
 
 
+
+
+        $('.rgt_side_tab li a.review2').on('click', function () {
+            $('.first2_act').addClass('active in');
+            $('.second2_act').removeClass('active in');
+            $('.third2_act').removeClass('active in');
+            $('.fourth2_act').removeClass('active in');
+            $('.fifth2_act').removeClass('active in');
+            $('.sixth2_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.delivery2').on('click', function () {
+            $('.second2_act').addClass('active in');
+            $('.first2_act').removeClass('active in');
+            $('.third2_act').removeClass('active in');
+            $('.fourth2_act').removeClass('active in');
+            $('.fifth2_act').removeClass('active in');
+            $('.sixth2_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.benefits2').on('click', function () {
+            $('.third2_act').addClass('active in');
+            $('.first2_act').removeClass('active in');
+            $('.second2_act').removeClass('active in');
+            $('.fourth2_act').removeClass('active in');
+            $('.fifth2_act').removeClass('active in');
+            $('.sixth2_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.faq2').on('click', function () {
+            $('.fourth2_act').addClass('active in');
+            $('.first2_act').removeClass('active in');
+            $('.third2_act').removeClass('active in');
+            $('.second2_act').removeClass('active in');
+            $('.fifth2_act').removeClass('active in');
+            $('.sixth2_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.exam2').on('click', function () {
+            $('.fifth2_act').addClass('active in');
+            $('.first2_act').removeClass('active in');
+            $('.third2_act').removeClass('active in');
+            $('.fourth2_act').removeClass('active in');
+            $('.second2_act').removeClass('active in');
+            $('.sixth2_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.testimonial2').on('click', function () {
+            $('.sixth2_act').addClass('active in');
+            $('.first2_act').removeClass('active in');
+            $('.third2_act').removeClass('active in');
+            $('.fourth2_act').removeClass('active in');
+            $('.fifth2_act').removeClass('active in');
+            $('.second2_act').removeClass('active in');
+        });
+
+
+        $('.rgt_side_tab li a.included3').on('click', function () {
+            $('.first3_act').addClass('active in');
+            $('.fourth3_act').removeClass('active in');
+            $('.thrid3_act').removeClass('active in');
+            $('.second3_act').removeClass('active in');
+            $('.fifth3_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.review3').on('click', function () {
+            $('.second3_act').addClass('active in');
+            $('.fourth3_act').removeClass('active in');
+            $('.thrid3_act').removeClass('active in');
+            $('.fifth3_act').removeClass('active in');
+            $('.first3_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.faq3').on('click', function () {
+            $('.thrid3_act').addClass('active in');
+            $('.fourth3_act').removeClass('active in');
+            $('.fifth3_act').removeClass('active in');
+            $('.second3_act').removeClass('active in');
+            $('.first3_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.exam3').on('click', function () {
+            $('.fourth3_act').addClass('active in');
+            $('.thrid3_act').removeClass('active in');
+            $('.fifth3_act').removeClass('active in');
+            $('.second3_act').removeClass('active in');
+            $('.first3_act').removeClass('active in');
+        });
+        $('.rgt_side_tab li a.testimonial3').on('click', function () {
+            $('.fifth3_act').addClass('active in');
+            $('.fourth3_act').removeClass('active in');
+            $('.thrid3_act').removeClass('active in');
+            $('.second3_act').removeClass('active in');
+            $('.first3_act').removeClass('active in');
+            });
+
         //Accordion
 
         jQuery(function ($) {
@@ -312,9 +408,50 @@
                 }, 10000);
 
 
-                });
+            });
+
+            setTimeout(function () {
+                $("#hsrs_table1").tablesorter({
+
+                    theme: 'blue',
+
+                    // hidden filter input/selects will resize the columns, so try to minimize the change
+                    widthFixed: true,
+                    dateFormat: "ddmmyyyy",
+
+                    // initialize zebra striping and filter widgets
+                    widgets: ["zebra", "filter"],
+
+                    headers: { 1: { sorter: "shortDate" } },
+
+
+
+                }, 10000);
+
+
+            });
            
 
+            setTimeout(function () {
+                $("#hsrs_table3").tablesorter({
+
+                    theme: 'blue',
+
+                    // hidden filter input/selects will resize the columns, so try to minimize the change
+                    widthFixed: true,
+                    dateFormat: "ddmmyyyy",
+
+                    // initialize zebra striping and filter widgets
+                    widgets: ["zebra", "filter"],
+
+                    headers: { 1: { sorter: "shortDate" } },
+
+
+
+                }, 10000);
+
+
+            });
         });
 
 

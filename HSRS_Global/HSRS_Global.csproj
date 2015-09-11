@@ -243,10 +243,12 @@
     <Content Include="fonts\roboto-condensed.woff" />
     <Content Include="images\banner-gif.gif" />
     <Content Include="images\banner_03.jpg" />
+    <Content Include="images\hsrs-gif.gif" />
     <Content Include="images\hsrs.gif" />
     <Content Include="images\hsrs.jpg" />
     <Content Include="images\HSRS_new_banner.jpg" />
     <Content Include="images\please_wait.gif" />
+    <Content Include="images\price2-agile.jpg" />
     <Content Include="images\Ravi-Shankar.jpg" />
     <Content Include="images\social-icons.png" />
     <Content Include="images\Thumbs.db" />
@@ -373,7 +375,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Home\Overview.cshtml" />
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Home\coursemethodology.cshtml" />
@@ -397,6 +398,10 @@
     <Content Include="Views\Home\Paymentsuccess.cshtml" />
     <Content Include="Views\Home\OnlineCoursemaster.cshtml" />
     <Content Include="Views\Home\sitemap.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Home\_PMP.cshtml" />
+    <Content Include="Views\Home\_PRINCE2.cshtml" />
+    <Content Include="Views\Home\_PRINCE2_Agile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
