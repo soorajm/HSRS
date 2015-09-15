@@ -243,7 +243,7 @@
     <Content Include="fonts\roboto-condensed.woff" />
     <Content Include="images\banner-gif.gif" />
     <Content Include="images\banner_03.jpg" />
-    <Content Include="images\hsrs-gif.gif" />
+    <Content Include="images\hsrsgif.gif" />
     <Content Include="images\hsrs.gif" />
     <Content Include="images\hsrs.jpg" />
     <Content Include="images\HSRS_new_banner.jpg" />
