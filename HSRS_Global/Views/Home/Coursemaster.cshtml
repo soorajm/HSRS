@@ -78,7 +78,7 @@
                             <dl class="dl-horizontal">
                                 <dt>Training Name<span>*</span></dt>
                                 <dd>
-                                    @Html.DropDownListFor(model => model.Trainingid, new SelectList(ViewBag.Type, "Value", "Text"), new { id = "drop", autocomplete = "off", name = "drop" })
+                                    @Html.DropDownListFor(model => model.Trainingid, new SelectList(ViewBag.Type, "Value", "Text"), new { id = "drop", autocomplete = "off", name = "drop", Style = "Width:75%" })
                                     @Html.HiddenFor(model => model.C_Id)
                                 </dd>
                                 <dt>Course Name<span>*</span></dt>
@@ -121,6 +121,9 @@
 
                                                     <th>
                                                         COURSE
+                                                    </th>
+                                                    <th>
+                                                        CERTIFICATE
                                                     </th>
                                                     <th id="browserFilter">
                                                         Date
@@ -169,6 +172,7 @@
                                 {
                             <tr>
                                 <td>@dr["Name"]</td>
+                                <td>@dr["Tname"]</td>
                                 <td>@dr["Date"]</td>
                                 <td>
                                     @dr["Location"]
@@ -203,7 +207,8 @@
                     <input type="hidden" name="txt" id="date" value="@TempData["Date"]" />
                     <input type="hidden" name="txt" id="Tname" value="@TempData["Training"]" />
                     <input type="hidden" name="txt" id="id" value="@TempData["ID"]" />
-                    }
+    <input type="hidden" name="txt" id="TrainingID" value="@TempData["TrainingID"]" />
+}
                     <script>
                         $(document).ready(function () {
 
@@ -214,6 +219,7 @@
                             var date = $("#date").val()
                             var tname = $("#Tname").val()
                             var id = $("#id").val()
+                            var trainingID = $("#TrainingID").val()
                             if (name != "") { $("#Name").val(name) }
 
                             if (loc != "") { $("#Location").val(loc) }
@@ -222,6 +228,7 @@
                             if (date != "") { $("#Date").val(date) }
                             if (tname != "") { $("drop").val("Hi"); }
                             if (id != "") { $("#C_Id").val(id) }
+                            if (trainingID != "") { $("#drop").val(trainingID) }
                         });
                     </script>
 <script>

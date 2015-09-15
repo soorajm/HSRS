@@ -25,7 +25,7 @@ namespace HSRS_Global.Controllers
         {
             DataSet ds = null;
             Coursemaster course = new Coursemaster();
-            course.Action = "Select";
+            course.Action = "Selectcoursedata";
             ds = course.coursemaster(course);
             ViewData["AllcouData"] = ds.Tables[0];
         }
@@ -89,9 +89,10 @@ namespace HSRS_Global.Controllers
                 TempData["Duration"] = ds.Tables[0].Rows[0]["Duration"].ToString();
                 TempData["Price"] = ds.Tables[0].Rows[0]["Price"].ToString();
                 TempData["Date"] = ds.Tables[0].Rows[0]["Date"].ToString();
-                List<SelectListItem> items = new List<SelectListItem>();
-                items.Add(new SelectListItem { Text = ds.Tables[0].Rows[0]["Tname"].ToString(), Value = ds.Tables[0].Rows[0]["Tid"].ToString() });
-                ViewData["Type"] = items;
+                TempData["TrainingID"] = ds.Tables[0].Rows[0]["Tid"].ToString();
+                //List<SelectListItem> items = new List<SelectListItem>();
+                //items.Add(new SelectListItem { Text = ds.Tables[0].Rows[0]["Tname"].ToString(), Value = ds.Tables[0].Rows[0]["Tid"].ToString() });
+                //ViewData["Type"] = items;
                 TempData["ID"] = ds.Tables[0].Rows[0]["ID"].ToString();
                 TempData["SubmitValue"] = "Update";
                 if (master == null)
@@ -99,6 +100,7 @@ namespace HSRS_Global.Controllers
                     return HttpNotFound();
                 }
                 coursedata();
+                bindTraingtype();
                 return View("~/Views/Home/Coursemaster.cshtml");
         }
         public ActionResult Delete(String Id)
