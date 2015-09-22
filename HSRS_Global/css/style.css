@@ -772,3 +772,7 @@ span.benefits-content {
     font-size: 13px;
     font-family: 'roboto-condensed';
 }
+
+
+#hsrs_table_wrapper .coursemaster tfoot th select{width:220px;}
+#hsrs_table_wrapper .coursemaster tfoot th {width:20%;}

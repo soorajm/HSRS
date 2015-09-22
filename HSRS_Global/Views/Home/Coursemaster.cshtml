@@ -15,53 +15,7 @@
 @using (Html.BeginForm("Index", "Coursemaster"))
 {
 
-    @*<fieldset>
-            <legend>Coursemaster</legend>
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Trainingid)
-                @Html.HiddenFor(model => model.C_Id)
-            </div>
-            <div class="editor-field">
-               @Html.DropDownListFor(model => model.Trainingid, new SelectList(ViewBag.Type, "Value", "Text"), new { id = "drop", autocomplete = "off", name = "drop" })
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Name)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Name, new { id = "name"})
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Date)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Date,new { id = "Date"})
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Location)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Location, new { id = "loaction" })
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Duration)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Duration, new { id = "duration" })
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Price)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Price, new { id = "price" })
-            </div>
-
-
-        </fieldset>*@
+  
     <script>
     $(function () {
         $("#Date").datepicker();
@@ -76,7 +30,7 @@
                         <h1>Course Master</h1>
                         <div class="col-md-6 col-sm-6" style="left:25%">
                             <dl class="dl-horizontal">
-                                <dt>Training Name<span>*</span></dt>
+                                <dt>Certificate<span>*</span></dt>
                                 <dd>
                                     @Html.DropDownListFor(model => model.Trainingid, new SelectList(ViewBag.Type, "Value", "Text"), new { id = "drop", autocomplete = "off", name = "drop", Style = "Width:75%" })
                                     @Html.HiddenFor(model => model.C_Id)
@@ -113,8 +67,7 @@
 
                                 <div class="table_page">
                                     <div class="table-responsive">
-                                        <table id="hsrs_table" class="display" cellspacing="0" width="100%">
-
+                                        <table id="hsrs_table" class="display coursemaster" cellspacing="0" width="100%">
                                             <thead>
 
                                                 <tr>
@@ -155,12 +108,16 @@
                                                     <th>
                                                         COURSE
                                                     </th>
+                                                    <th>
+                                                        Date
+                                                    </th>
                                                     <th class="locat">
                                                         LOCATION
                                                     </th>
                                                     <th class="date">
                                                         Date
                                                     </th>
+                                                    
                                                 </tr>
                                             </tfoot>
 

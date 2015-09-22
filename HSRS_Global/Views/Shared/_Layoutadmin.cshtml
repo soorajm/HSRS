@@ -225,7 +225,6 @@ Course Master</a></li>
         $(document).ready(function () {
 
 
-
             setTimeout(function () {
                 $('#hsrs_table').DataTable({
                     initComplete: function () {
@@ -233,7 +232,7 @@ Course Master</a></li>
 
                         api.columns().indexes().flatten().each(function (i) {
                             var column = api.column(i);
-                            var e = ["SELECT A COURSE", "SELECT A DATE", "SELECT A LOCATION"];
+                            var e = ["SELECT A COURSE", "SELECT A CERTFICATE", "SELECT A DATE", "SELECT A LOCATION"];
                             var select = $('<select placeholder="select your beverage"><option value="' + e[i] + '">' + e[i] + '</option></select>')
                                 .appendTo($(column.footer()).empty())
                                 .on('change', function () {

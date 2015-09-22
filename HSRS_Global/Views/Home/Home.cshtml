@@ -55,9 +55,12 @@
         }
 
     .tab-content12 .nav > li > a {
-        background: #EBEBEB;
+            color: #2f2f2f;
+        background: #BEBEBE;
         padding: 10px 136px;
+        font-size: 16px; font-family: 'gandhisans-regular';
     }
+
 
     .tab-content12 .nav > li.active > a {
         color: #fff;
@@ -108,39 +111,29 @@
                 </div>*@
             <div class="row">
                 <div class="col-md-8 col-sm-8">
-                    <div class="col-md-4">
-                        <div class="high_inact">
-                            <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/highlyinteractive">Highly Interactive using Tablets</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                    @*<div class="col-md-4">
+                <div class="high_inact">
+                    <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/highlyinteractive">Highly Interactive using Tablets</a>
+                </div>
+            </div>*@
+                    <div class="col-md-4 ">
                         <div class="high_inact">
                             <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2exam">Exam Resit Guarantee</a>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="high_inact">
-                            <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2presentation">Presentation from Senior Managers</a>
-                        </div>
-                    </div>
+                    @*<div class="col-md-4">
+                <div class="high_inact">
+                    <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2presentation">Presentation from Senior Managers</a>
                 </div>
-                <div class="col-md-4 col-sm-4">
+            </div>*@
+                </div>
+                <div class="col-md-4">
                     <div class="hsrs">
-                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/hsrsgif.gif">
+                        <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/hsrs-gif1.gif">
                     </div>
-                    @*<div class="newsletter">
-                        <p>Please provide your email address to receive more details</p>
-                        <input type="text" placeholder="Enter Your Email ID" class="email_text">
-                        <input type="submit" value="SUBMIT" class="email_submit">
-                        </div>*@
+
                 </div>
-                @*<div class="col-md-4 col-sm-4">
-                        <div class="newsletter">
-                            <p>Please provide your email address to receive more details</p>
-                            <input type="text" id ="emailnews" placeholder="Enter Your Email ID" class="email_text">
-                            <input type="button" id="submitnews" value="SUBMIT" class="email_submit">
-                        </div>
-                    </div>*@
+
             </div>
         </div>
     </div>
