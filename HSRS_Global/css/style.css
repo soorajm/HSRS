@@ -138,8 +138,8 @@ font-size: 14px; font-family: 'gandhisans-regular'; border: 1px solid transparen
 .tab_inner li h1{margin: 0; font-size: 18px; padding: 10px 0; color: #1d3456;  font-family: 'roboto-condensed'; }
 .tab_inner li p{margin: 0; padding: 0 0 0 32px; color: #6b6b6b; font-size: 14px; font-family: 'gandhisans-regular';}
 .yell_dot{background: url('../images/image sprites1.png') -14px -15px no-repeat; display: inline-block; margin-right: 10px; vertical-align: middle; width: 22px; height: 22px;}
-.tab_inner li ul li { font-size: 13px; list-style-type: circle; border-bottom: 0 none; padding: 5px 0; text-transform: capitalize; color: #555; font-family: "gandhisans-regular";}
-.tab_inner li ul{padding: 15px 0 15px 45px;}.tab_inner li h2{margin: 15px 0; padding-left: 30px; font-family: 'gandhisans-regular'; font-size: 16px;}
+.tab_inner li ul li { font-size: 13px; list-style-type: circle; border-bottom: 0 none; padding: 5px 0; /*text-transform: capitalize;*/ color: #555; font-family: "gandhisans-regular";}
+.tab_inner li ul{padding: 0px 0 0px 45px;}.tab_inner li h2{margin: 15px 0; padding-left: 30px; font-family: 'gandhisans-regular'; font-size: 16px;}
 #testimonial li{padding-top: 15px;}
 
 
@@ -765,8 +765,6 @@ padding: 5px 0px 0px 30px;
 .ravimgpara{width:100%;}
 .ravimgpara h1{font-size: 24px;}
 .hsrs img{height: 78px;width:100%;}
-.hsrs{padding-top: 5px;padding-bottom: 2px;}
-@media(max-width: 992px){.ravimgpara{width:100%;}.hsrs{padding-right: 15px;padding-left: 15px;padding-bottom: 10px;}.hsrs img{height: 100px;}#hsrs_table_wrapper tfoot th select{width:268px;}}
 span.benefits-content {
     color: #555;
     font-size: 13px;
@@ -776,3 +774,13 @@ span.benefits-content {
 
 #hsrs_table_wrapper .coursemaster tfoot th select{width:220px;}
 #hsrs_table_wrapper .coursemaster tfoot th {width:20%;}
+
+.exam_resist{float: right;position: relative;top: 4px;}
+.exam_resist li{list-style-type:none;padding: 7px 0px 6px 0px; }
+.exam_resist li a{color: #1d3456;text-decoration: none;font-family: 'gandhi_sansbold';padding: 5px 15px;background-color: #fff;border: 4px solid #576781;}
+.clientDesc{color:#fff;font-size: 12px;font-family: 'gandhisans-regular';text-align: justify;}
+.clientTitle{color:#fff;font-family: 'gandhisans-regular';font-style: italic;text-align: justify; font-size: 12px;padding: 2px 0px;}
+
+
+.hsrs{padding-top: 5px;padding-bottom: 5px;}
+@media(max-width: 992px){.ravimgpara{width:100%;}.hsrs{padding-right: 15px;padding-left: 15px;padding-bottom: 10px;}.hsrs img{height: 100px;}#hsrs_table_wrapper tfoot th select{width:268px;}.exam_resist{float:none;}}

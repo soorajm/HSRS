@@ -343,6 +343,7 @@
     <Content Include="js\jquery.min.1.11.1.js" />
     <Content Include="js\jquery.tablesorter.js" />
     <Content Include="js\jquery.tablesorter.widgets.js" />
+    <Content Include="js\jquery.vticker-min.js" />
     <Content Include="js\jqueryuidate.js" />
     <Content Include="js\maincontroller.js" />
     <Content Include="js\popup.js" />

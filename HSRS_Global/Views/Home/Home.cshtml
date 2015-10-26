@@ -55,10 +55,11 @@
         }
 
     .tab-content12 .nav > li > a {
-            color: #2f2f2f;
+        color: #2f2f2f;
         background: #BEBEBE;
         padding: 10px 136px;
-        font-size: 16px; font-family: 'gandhisans-regular';
+        font-size: 16px;
+        font-family: 'gandhisans-regular';
     }
 
 
@@ -111,31 +112,83 @@
                 </div>*@
             <div class="row">
                 <div class="col-md-8 col-sm-8">
-                    @*<div class="col-md-4">
-                <div class="high_inact">
-                    <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/highlyinteractive">Highly Interactive using Tablets</a>
-                </div>
-            </div>*@
-                    <div class="col-md-4 ">
-                        <div class="high_inact">
-                            <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2exam">Exam Resit Guarantee</a>
-                        </div>
+
+                    <!-- <p>Testimonials</p> -->
+                    <div id="clientSlider" class="clientSlider" style="overflow: hidden; position: relative;top:19px">
+                        <ul style="position: absolute; margin: 0px; padding: 0px; top: 0px;">
+                            <li style="margin: 0px; padding: 0px;  display: list-item;">
+                                <div>
+                                    <div class="clientDesc">
+                                        Liked the mostly the trainer and the learning strongly recommended.
+                                    </div>
+                                    <div class="clientTitle">- Mariao Hohaia, Sep 2014 </div>
+
+                                </div>
+                            </li>
+                            <li style="margin: 0px; padding: 0px;  display: list-item;">
+                                <div>
+                                    <div class="clientDesc">
+                                        Great Facilitator, open and answered questions well to allow participants to learn. NO Improvement needed.
+                                        Number of participants were good to allow high interactions.
+                                    </div>
+                                    <div class="clientTitle">– Jared McGillicuddy, Sep 2014</div>
+
+                                </div>
+                            </li>
+                            <li style="margin: 0px; padding: 0px;  display: list-item;">
+                                <div>
+                                    <div class="clientDesc">
+                                        Ravi was comprehensive in his explanations and provided good examples
+                                    </div>
+                                    <div class="clientTitle">– Rachel Curry, March 2014</div>
+
+                                </div>
+                            </li>
+                            <li style="margin: 0px; padding: 0px;  display: list-item;">
+                                <div>
+                                    <div class="clientDesc">
+                                        I am very thankful to you for your support, patience and guidance in training
+                                    </div>
+                                    <div class="clientTitle">– Sri Vathsav Gali, July 2015</div>
+
+                                </div>
+                            </li>
+                            <li style="margin: 0px; padding: 0px;  display: list-item;">
+                                <div>
+                                    <div class="clientDesc">
+                                        The training was good....although very intense!  I particularly enjoyed our trainer Ravi and the extensive knowledge and experience that he has in project management. This added much value to my learning.
+                                    </div>
+                                    <div class="clientTitle">– Natasha Clarke, Sep 2014</div>
+
+                                </div>
+                            </li>
+
+                            <li style="margin: 0px; padding: 0px;  display: list-item;">
+                                <div>
+                                    <div class="clientDesc">
+                                        The instructor is knowledgeable and teaches well in a calm and collected, patient manner
+                                    </div>
+                                    <div class="clientTitle">– Bridget Wong, July 2015</div>
+
+                                </div>
+                            </li>
+
+
+                        </ul>
                     </div>
-                    @*<div class="col-md-4">
-                <div class="high_inact">
-                    <a href="@System.Configuration.ConfigurationManager.AppSettings["Path"]/prince2presentation">Presentation from Senior Managers</a>
                 </div>
-            </div>*@
-                </div>
+
                 <div class="col-md-4">
                     <div class="hsrs">
                         <img src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/images/hsrs-gif1.gif">
                     </div>
 
                 </div>
-
             </div>
+
+
         </div>
+    </div>
     </div>
 
 </section>
@@ -168,48 +221,65 @@
 
             <div class="tab-pane active" id="a_tab">
                 @Html.Partial("~/Views/Home/_PRINCE2.cshtml");
-               
-                </div>
-                    <div class="tab-pane" id="b_tab">
-                      @Html.Partial("~/Views/Home/_PRINCE2_Agile.cshtml");
-                    </div>
-                    <div class="tab-pane " id="c_tab">
-                      @Html.Partial("~/Views/Home/_PMP.cshtml");
-                    </div>
-               
-            </div>
-<script>
-    var cname = $("#emailnews").val();
-    function ValidateEmail(email) {
-        var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-        return expr.test(email);
-    };
-    $("#submitnews").click(function () {
-        var email = $("#emailnews").val();
-        if (email == "" || email == null) {
-            alert("Please Enter Your Email address ");
-            $("#emailnews").focus();
-            return false;
-        }
-        else if (email != "" || email != null) {
-            if (!ValidateEmail(email)) {
-                alert("Invalid email address.");
-                $("#emailnews").focus();
-                return false;
-            }
-        }
-        $('#Intro').css("display", "");
-        $('#Inner').css("display", "");
-        $.ajax({
-            url: "@System.Configuration.ConfigurationManager.AppSettings["Path"]/Home/newsletter/" + email, success: function (result) {
 
-                setTimeout(function () {
-                    alert(result);
-                    $("#emailnews").val("");
-                    $('#Intro').css("display", "none");
-                    $('#Inner').css("display", "none");
-                }, 2000);
-            }
-        });
-    });
-</script>
+            </div>
+            <div class="tab-pane" id="b_tab">
+                @Html.Partial("~/Views/Home/_PRINCE2_Agile.cshtml");
+            </div>
+            <div class="tab-pane " id="c_tab">
+                @Html.Partial("~/Views/Home/_PMP.cshtml");
+            </div>
+
+        </div>
+        <script>
+            var cname = $("#emailnews").val();
+            function ValidateEmail(email) {
+                var expr = /^([\w-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                return expr.test(email);
+            };
+            $("#submitnews").click(function () {
+                var email = $("#emailnews").val();
+                if (email == "" || email == null) {
+                    alert("Please Enter Your Email address ");
+                    $("#emailnews").focus();
+                    return false;
+                }
+                else if (email != "" || email != null) {
+                    if (!ValidateEmail(email)) {
+                        alert("Invalid email address.");
+                        $("#emailnews").focus();
+                        return false;
+                    }
+                }
+                $('#Intro').css("display", "");
+                $('#Inner').css("display", "");
+                $.ajax({
+                    url: "@System.Configuration.ConfigurationManager.AppSettings["Path"]/Home/newsletter/" + email, success: function (result) {
+
+                        setTimeout(function () {
+                            alert(result);
+                            $("#emailnews").val("");
+                            $('#Intro').css("display", "none");
+                            $('#Inner').css("display", "none");
+                        }, 2000);
+                    }
+                });
+            });
+        </script>
+        <script src="@System.Configuration.ConfigurationManager.AppSettings["Path"]/js/jquery.vticker-min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(function () {
+                    $('#clientSlider').vTicker({
+                        speed: 500,
+                        pause: 6000,
+                        animation: 'fade',
+                        mousePause: false,
+                        showItems: 1,
+                        direction: 'up'
+
+                    });
+                });
+
+            });
+        </script>
