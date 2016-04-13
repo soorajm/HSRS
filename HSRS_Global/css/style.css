@@ -784,3 +784,22 @@ span.benefits-content {
 
 .hsrs{padding-top: 5px;padding-bottom: 5px;}
 @media(max-width: 992px){.ravimgpara{width:100%;}.hsrs{padding-right: 15px;padding-left: 15px;padding-bottom: 10px;}.hsrs img{height: 100px;}#hsrs_table_wrapper tfoot th select{width:268px;}.exam_resist{float:none;}}
+
+
+.hsrs-tabs {
+       background: #fff;
+    width: 311px;
+    position: absolute;
+    top: -115px;
+    right: 6px;
+    margin: 10px;
+}
+.hsrs-tabs table {
+    margin: 8px;
+}
+.hsrs-tabs td {
+    border: 1px #ccc solid;
+    padding: 5px 0;    
+    color: #324666;
+    font-weight: bold;
+}
